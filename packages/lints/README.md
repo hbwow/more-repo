@@ -1,11 +1,11 @@
-# aladdin 内部规则库（eslint prettier stylelint）
+# 规则库（eslint prettier stylelint）
 
 ## 安装
 ### 安装 npm 包
 ```shell
-npm i @md/aladdin-rules -D
+npm i @hbwow/lints -D
 #or
-pnpm add @md/aladdin-rules -D
+pnpm add @hbwow/lints -D
 ```
 
 ### 安装 eslint stylelint prettier
@@ -28,20 +28,20 @@ package.json
 .eslintrc.js
 ```js
 module.exports = {
-  extends: [require.resolve('@md/aladdin-rules/dist/eslint')],
+  extends: [require.resolve('@hbwow/lints/dist/eslint')],
 };
 ```
 
 .stylelintrc.js
 ```js
 module.exports = {
-  extends: [require.resolve('@md/aladdin-rules/dist/stylelint')],
+  extends: [require.resolve('@hbwow/lints/dist/stylelint')],
 };
 ```
 
 .prettierrc.js
 ```js
-const prettier = require('@md/aladdin-rules/dist/prettier');
+const prettier = require('@hbwow/lints/dist/prettier');
 
 module.exports = {
   ...prettier,
