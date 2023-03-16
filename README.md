@@ -1,3 +1,7 @@
+# hbwow repo
+
+## 包管理
+
 ```bash
 pnpm install react -w
 
@@ -12,6 +16,18 @@ pnpm up <package> --filter <workspace>
 pnpm build --filter <workspace>
 
 pnpm build --filter "./packages/**"
+```
+
+## changesets
+
+```bash
+
+pnpm add -Dw @changesets/cli
+
+pnpm changeset init
+
+pnpm changeset
+
 ```
 
 ---
