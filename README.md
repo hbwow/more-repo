@@ -1,3 +1,21 @@
+```bash
+pnpm install react -w
+
+pnpm install rollup -wD
+
+pnpm add <package> --filter <workspace>
+
+pnpm uninstall <package> --filter <workspace>
+
+pnpm up <package> --filter <workspace>
+
+pnpm build --filter <workspace>
+
+pnpm build --filter "./packages/**"
+```
+
+---
+
 # Turborepo starter
 
 This is an official pnpm starter turborepo.

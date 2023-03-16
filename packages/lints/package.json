@@ -1,0 +1,43 @@
+{
+  "name": "@hbwow/lints",
+  "version": "0.0.0",
+  "description": "lint",
+  "keywords": [
+    "eslint",
+    "stylelint",
+    "prettier"
+  ],
+  "homepage": "https://github.com/hbwow/more-repo.git",
+  "bugs": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hbwow/more-repo.git"
+  },
+  "license": "MIT",
+  "author": "hbwow",
+  "main": "dist/index.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "*.md"
+  ],
+  "scripts": {
+    "dev": "father dev",
+    "build": "father build",
+    "build:ANALYZE": "ANALYZE=1 father build",
+    "build:no-clean": "father build --no-clean",
+    "doctor": "father doctor",
+    "version": "father version"
+  },
+  "dependencies": {
+    "@umijs/lint": "^4.0.56",
+    "eslint-config-prettier": "^8.6.0",
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "prettier-plugin-packagejson": "^2.4.2",
+    "prettier-plugin-two-style-order": "^1.0.1",
+    "stylelint-config-prettier": "^9.0.4"
+  },
+  "devDependencies": {
+    "father": "^4.1.3"
+  }
+}
