@@ -23,6 +23,8 @@
   "dependencies": {
     "@clack/core": "^0.3.2",
     "@clack/prompts": "^0.6.3",
+    "@types/clear": "^0.1.2",
+    "@types/figlet": "^1.5.5",
     "@types/fs-extra": "^11.0.1",
     "chalk": "^4.1.2",
     "clear": "^0.1.0",
