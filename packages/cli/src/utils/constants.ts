@@ -19,32 +19,3 @@ export const E_NPM_CLIENT = {
   yarn: "yarn",
   pnpm: "pnpm",
 };
-
-export const RUN_INSTALL = ({
-  use,
-  pkgNames,
-  isDev,
-}: {
-  use: string;
-  pkgNames?: string;
-  isDev?: boolean;
-}) => {
-  const useYarn = use === "yarn";
-  const usePnpm = use === "pnpm";
-
-  if (pkgNames) {
-    return `${use} ${useYarn || usePnpm ? "add" : "install"} ${pkgNames} ${
-      isDev ? "-D" : ""
-    }`;
-  }
-
-  return `${use} install`;
-};
-
-export const RUN_X = ({ use, command }: { use: string; command: string }) => {
-  const useYarn = use === "yarn";
-  const usePnpm = use === "pnpm";
-  return `${useYarn || usePnpm ? use : "npx"} ${
-    useYarn || usePnpm ? "dlx" : ""
-  } ${command}`;
-};

@@ -2,7 +2,7 @@
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-03-17 12:49:05
  * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2023-03-17 16:09:42
+ * @LastEditTime: 2023-03-18 21:31:26
  * @FilePath: /more-repo/packages/cli/src/ask/askConfig.ts
  * @Description:
  */
@@ -47,11 +47,13 @@ export const createProject = {
   },
   template: () => {
     return p.select({
-      message: "请输入项目名称：",
-      placeholder: "hbwow-app",
-      validate: (value) => {
-        if (!value) return "请输入项目名称！";
-      },
+      message: "请选择项目类型",
+      options: [
+        { value: "umi", label: "umi" },
+        { value: "react-vite", label: "react-vite" },
+        { value: "nextjs", label: "nextjs" },
+        { value: "vue", label: "vue" },
+      ],
     });
   },
 };

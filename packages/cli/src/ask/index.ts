@@ -2,7 +2,7 @@
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-03-17 13:44:48
  * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2023-03-18 11:40:19
+ * @LastEditTime: 2023-03-18 21:38:05
  * @FilePath: /more-repo/packages/cli/src/ask/index.ts
  * @Description:
  */
@@ -10,7 +10,8 @@ import * as p from "@clack/prompts";
 import fs from "fs-extra";
 
 import { step1, createProject, addLints } from "./askConfig";
-import { CWD, RUN_INSTALL, RUN_X } from "../utils/constants";
+import { CWD } from "../utils/constants";
+import { run_install, run_x, editPackageJson } from "../utils/common";
 import runCommand from "../utils/runCommand";
 
 const ask = async () => {
@@ -31,21 +32,21 @@ const ask = async () => {
   if (step1Result.projectType === "createProject") {
     const projectResult = await p.group({ ...createProject }, { onCancel });
 
-    console.log(projectResult, "projectResult");
+    p.note(`cd ${"////"} \n${process.env.NPM_CLIENT} dev`, "Next steps.");
+
+    p.outro(`Problems? https://example.com/issues`);
   }
 
   // 添加规则
   if (step1Result.projectType === "addLints") {
     const lintsResult = await p.group({ ...addLints }, { onCancel });
 
-    let pkg = fs.readJsonSync(`${CWD}/package.json`);
-
     if (lintsResult.is) {
       // 1. 下载 lints 包
       const s = p.spinner();
       s.start("Installing @hbwow/lints");
       await runCommand(
-        RUN_INSTALL({
+        run_install({
           use: process.env.NPM_CLIENT,
           pkgNames: "@hbwow/lints",
           isDev: true,
@@ -57,7 +58,7 @@ const ask = async () => {
       // 2. 下载 eslint stylelint prettier
       s.start("Installing eslint stylelint prettier");
       await runCommand(
-        RUN_INSTALL({
+        run_install({
           use: process.env.NPM_CLIENT,
           pkgNames: "eslint stylelint prettier",
           isDev: true,
@@ -69,11 +70,14 @@ const ask = async () => {
       // 3. .eslintrc.js .stylelintrc.js .prettierrc.js
       s.start("Writing .eslintrc.js .stylelintrc.js .prettierrc.js");
 
-      pkg = fs.readJsonSync(`${CWD}/package.json`);
-      pkg.scripts["eslint"] = "eslint src --fix --ext .js,.jsx,.ts,.tsx";
-      pkg.scripts["stylelint"] = "stylelint **/*.{css,less,scss} --fix";
-      pkg.scripts["prettier"] = `prettier -c --write "**/*"`;
-      fs.writeJsonSync(`${CWD}/package.json`, pkg);
+      editPackageJson({
+        key: "scripts",
+        valueObj: {
+          eslint: "eslint src --fix --ext .js,.jsx,.ts,.tsx",
+          stylelint: "stylelint **/*.{css,less,scss} --fix",
+          prettier: `prettier -c --write "**/*"`,
+        },
+      });
 
       fs.writeFileSync(
         "./.eslintrc.js",
@@ -100,7 +104,7 @@ const ask = async () => {
       // 4. 与 Git 工作流结合
       s.start("Installing lint-staged");
       await runCommand(
-        RUN_INSTALL({
+        run_install({
           use: process.env.NPM_CLIENT,
           pkgNames: "lint-staged",
           isDev: true,
@@ -108,18 +112,18 @@ const ask = async () => {
         { cwd: CWD }
       );
 
-      pkg = fs.readJsonSync(`${CWD}/package.json`);
-      pkg["lint-staged"] = {};
-      pkg["lint-staged"]["*.{ts,tsx,js,jsx}"] = [
-        "eslint --config .eslintrc.js",
-      ];
-      pkg["lint-staged"]["*.{css,less,scss}"] = [
-        "stylelint --config .stylelintrc.js",
-      ];
-      pkg["lint-staged"]["*.{js,jsx,ts,tsx,less,md,json}"] = [
-        "prettier --write",
-      ];
-      fs.writeJsonSync(`${CWD}/package.json`, pkg);
+      editPackageJson({
+        key: "lint-staged",
+      });
+
+      editPackageJson({
+        key: "lint-staged",
+        valueObj: {
+          "*.{ts,tsx,js,jsx}": "eslint --config .eslintrc.js",
+          "*.{css,less,scss}": "stylelint --config .stylelintrc.js",
+          "*.{js,jsx,ts,tsx,less,md,json}": "prettier --write",
+        },
+      });
 
       s.stop("Installed lint-staged");
 
@@ -130,7 +134,7 @@ const ask = async () => {
 
       s.start("Starting husky-init");
       await runCommand(
-        RUN_X({ use: process.env.NPM_CLIENT, command: "husky-init" }),
+        run_x({ use: process.env.NPM_CLIENT, command: "husky-init" }),
         { cwd: CWD }
       );
 
@@ -138,7 +142,7 @@ const ask = async () => {
         cwd: CWD,
       });
 
-      await runCommand(RUN_INSTALL({ use: process.env.NPM_CLIENT }), {
+      await runCommand(run_install({ use: process.env.NPM_CLIENT }), {
         cwd: CWD,
       });
 
@@ -147,7 +151,7 @@ const ask = async () => {
       });
 
       await runCommand(
-        RUN_INSTALL({
+        run_install({
           use: process.env.NPM_CLIENT,
           pkgNames: "@commitlint/cli @commitlint/config-conventional",
           isDev: true,
@@ -155,9 +159,12 @@ const ask = async () => {
         { cwd: CWD }
       );
 
-      pkg = fs.readJsonSync(`${CWD}/package.json`);
-      pkg.scripts["commitlint"] = "commitlint --config .commitlintrc.js -e -V";
-      fs.writeJsonSync(`${CWD}/package.json`, pkg);
+      editPackageJson({
+        key: "scripts",
+        valueObj: {
+          "lint-staged": "commitlint --config .commitlintrc.js -e -V",
+        },
+      });
 
       fs.writeFileSync(
         "./.commitlintrc.js",
@@ -167,7 +174,9 @@ const ask = async () => {
       s.stop("Started husky-init");
     }
 
-    // console.log(lintsResult, "lintsResult");
+    if (!lintsResult.is) {
+      onCancel();
+    }
   }
 };
 
