@@ -6,16 +6,15 @@
  * @FilePath: /more-repo/packages/cli/src/utils/constants.ts
  * @Description:
  */
-import { join } from "path";
+import { join } from 'path';
 
-export const PKG_PATH = join(__dirname, "../../package.json");
+export const PKG_PATH = join(__dirname, '../../package.json');
 export const PKG = require(PKG_PATH);
 
 export const CWD = process.cwd(); //当前运行node命令的目录
-export const PROJECT_PATH = (projectName) => join(__dirname, "projectName");
 
 export const E_NPM_CLIENT = {
-  npm: "npm",
-  yarn: "yarn",
-  pnpm: "pnpm",
+  npm: 'npm',
+  yarn: 'yarn',
+  pnpm: 'pnpm',
 };
