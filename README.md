@@ -1,6 +1,13 @@
 # hbwow repo
 
-## 包管理
+## 发包步骤
+
+1. `pnpm build`
+2. `pnpm changeset`
+3. `pnpm version-packages`
+4. `pnpm release:only`
+
+## 包管理（PNPM）
 
 ```bash
 pnpm install react -w
