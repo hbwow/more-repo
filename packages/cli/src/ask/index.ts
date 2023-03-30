@@ -2,7 +2,7 @@
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-03-17 13:44:48
  * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2023-03-29 15:53:19
+ * @LastEditTime: 2023-03-30 10:51:20
  * @FilePath: /more-repo/packages/cli/src/ask/index.ts
  * @Description:
  */
@@ -181,7 +181,7 @@ const ask = async () => {
       editPackageJson({
         key: 'scripts',
         valueObj: {
-          'lint-staged': 'commitlint --config .commitlintrc.js -e -V',
+          'commitlint': 'commitlint --config .commitlintrc.js -e -V',
         },
       });
 
