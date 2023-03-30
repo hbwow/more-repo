@@ -1,5 +1,11 @@
 # @hbwow/cli
 
+## 1.0.1
+
+### Patch Changes
+
+- fix: commitlint 问题
+
 ## 1.0.0
 
 ### Major Changes
