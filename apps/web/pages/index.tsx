@@ -4,7 +4,7 @@ import { Button } from 'ui';
 import CustomSuspense from '@hbwow/custom-suspense';
 
 export default function Web() {
-  const fetchData = (delay) => {
+  const fetchData = (delay: number) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve([1, 2, 3, 4, 5, 6]);
