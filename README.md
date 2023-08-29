@@ -14,6 +14,7 @@ pnpm install react -w
 
 pnpm install rollup -wD
 
+# 只在某一个package安装
 pnpm add <package> --filter <workspace>
 
 pnpm uninstall <package> --filter <workspace>
