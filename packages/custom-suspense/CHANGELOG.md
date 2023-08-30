@@ -1,5 +1,11 @@
 # @hbwow/custom-suspense
 
+## 0.0.2
+
+### Patch Changes
+
+- 引入@hbwow/tsconfig
+
 ## 0.0.1
 
 ### Patch Changes
