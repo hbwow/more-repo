@@ -7,14 +7,19 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
     "changeset": "changeset",
+    "changeset:alpha": "changeset pre enter alpha",
+    "changeset:beta": "changeset pre enter beta",
+    "changeset:rc": "changeset pre enter rc",
+    "pre:exit": "pnpm changeset pre exit",
     "version-packages": "changeset version",
     "release": "pnpm build && pnpm release:only",
     "release:only": "changeset publish --registry=https://registry.npmjs.com/",
     "dev": "turbo run dev",
+    "build": "turbo run build",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "gen": "turbo gen workspace"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",

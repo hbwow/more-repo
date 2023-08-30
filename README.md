@@ -3,15 +3,17 @@
 ## 发包步骤
 
 1. `pnpm build`
-2. `pnpm changeset`
-3. `pnpm version-packages`
-4. `pnpm release:only`
+2. `pnpm changeset` （生成临时的 changelog）
+3. `pnpm version-packages` （消耗changelog生成组件的更新记录，并更新组件version）
+4. `pnpm release:only` （发布）
 
 ## 包管理（PNPM）
 
 ```bash
+# -w (--workspace-root)
 pnpm install react -w
 
+# D devDependencies
 pnpm install rollup -wD
 
 # 只在某一个package安装
