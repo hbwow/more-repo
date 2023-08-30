@@ -42,6 +42,9 @@ importers:
       '@babel/core':
         specifier: ^7.0.0
         version: 7.21.3
+      '@hbwow/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
       '@types/node':
         specifier: ^17.0.12
         version: 17.0.45
@@ -57,9 +60,6 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
-      tsconfig:
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
       typescript:
         specifier: ^4.5.3
         version: 4.9.5
@@ -85,6 +85,9 @@ importers:
       '@babel/core':
         specifier: ^7.0.0
         version: 7.21.3
+      '@hbwow/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
       '@types/node':
         specifier: ^17.0.12
         version: 17.0.45
@@ -100,9 +103,6 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
-      tsconfig:
-        specifier: workspace:*
-        version: link:../../packages/tsconfig
       typescript:
         specifier: ^4.5.3
         version: 4.9.5
@@ -238,6 +238,9 @@ importers:
 
   packages/ui:
     devDependencies:
+      '@hbwow/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
       '@types/react':
         specifier: ^18.0.17
         version: 18.0.28
@@ -253,9 +256,6 @@ importers:
       react:
         specifier: ^18.2.0
         version: 18.2.0
-      tsconfig:
-        specifier: workspace:*
-        version: link:../tsconfig
       typescript:
         specifier: ^4.5.2
         version: 4.9.5
