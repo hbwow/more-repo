@@ -26,6 +26,7 @@
     "version": "father version"
   },
   "devDependencies": {
+    "@hbwow/tsconfig": "workspace:^",
     "@types/react": "^18.2.21",
     "father": "^4.1.3",
     "react": "^18.2.0",
