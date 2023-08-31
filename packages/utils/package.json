@@ -1,0 +1,33 @@
+{
+  "name": "@hbwow/utils",
+  "version": "0.0.0",
+  "keywords": [
+    "utils",
+    "frontend"
+  ],
+  "files": [
+    "dist",
+    "lib",
+    "es"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "unpkg": "dist/custom-suspense.min.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "dev": "father dev",
+    "build": "father build",
+    "build:ANALYZE": "ANALYZE=1 father build",
+    "build:no-clean": "father build --no-clean",
+    "doctor": "father doctor",
+    "version": "father version"
+  },
+  "devDependencies": {
+    "@hbwow/tsconfig": "workspace:^",
+    "father": "^4.1.3"
+  },
+  "dependencies": {
+    "antd": "4.x"
+  }
+}
