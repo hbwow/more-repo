@@ -2,6 +2,12 @@ import { useState, useEffect } from 'react';
 
 import { Button } from 'ui';
 import CustomSuspense from '@hbwow/custom-suspense';
+import { HandleInterceptorCode } from '@hbwow/utils';
+
+const handleInterceptorCode = new HandleInterceptorCode({
+  ignoreCodes: [200],
+  tokenExpiredCodes: [401],
+});
 
 export default function Web() {
   const fetchData = (delay: number) => {
@@ -21,6 +27,8 @@ export default function Web() {
     fetchData(2000).then(() => {
       setIsLoading(false);
     });
+
+    handleInterceptorCode.handleCode({ code: 201 });
   }, []);
 
   return (

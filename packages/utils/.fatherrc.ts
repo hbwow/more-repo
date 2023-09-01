@@ -13,4 +13,5 @@ export default defineConfig({
     output: 'dist',
   },
   platform: 'browser',
+  extraBabelPlugins: [['import', { libraryName: 'antd', style: 'css' }]],
 });
