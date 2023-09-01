@@ -1,16 +1,17 @@
-import { defineConfig } from "father";
+import { defineConfig } from 'father';
 
-const path = require("path");
+const path = require('path');
 
 export default defineConfig({
   esm: {
     output: 'es',
   },
   cjs: {
-    output: "lib",
+    output: 'lib',
   },
   umd: {
-    output: "dist"
+    output: 'dist',
   },
-  platform: "browser",
+  platform: 'browser',
+  extraBabelPlugins: [['import', { libraryName: 'antd', style: 'css' }]],
 });

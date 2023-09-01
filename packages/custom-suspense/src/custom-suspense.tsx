@@ -5,10 +5,6 @@ import { ErrorBoundary, useErrorBoundary, FallbackProps } from 'react-error-boun
 import Skeleton, { SkeletonProps } from './skeleton';
 import Spin, { SpinProps } from './spin';
 
-// import 'antd/dist/antd.css';
-import 'antd/lib/skeleton/style/index.css';
-import 'antd/lib/spin/style/index.css';
-
 export interface ICustomSuspenseProps {
   isLoading?: boolean; // 是否加载中(一般为第一次)
   loadingComProps?: SkeletonProps;
