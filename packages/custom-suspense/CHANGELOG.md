@@ -1,5 +1,11 @@
 # @hbwow/custom-suspense
 
+## 0.0.3
+
+### Patch Changes
+
+- @hbwow/custom-suspense 引入babel-plugin-import
+
 ## 0.0.2
 
 ### Patch Changes

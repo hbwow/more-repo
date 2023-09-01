@@ -1,5 +1,12 @@
 # web
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @hbwow/custom-suspense@0.0.3
+
 ## 0.0.3
 
 ### Patch Changes
