@@ -5,12 +5,12 @@
 ```tsx
 import { ConfigProvider } from '@hbwow/validate-antd';
 
-<ConfigProvider icon={} rulesMap={}>
+<ConfigProvider icon={} rulesMap={{}}>
   <App />
 </ConfigProvider>;
 ```
 
-## Demo-1
+## Demo
 
 **默认**
 
@@ -39,6 +39,9 @@ import { getRules } from '@hbwow/validate-antd';
 const { getRules } = useGetRules();
 import { useGetRules } from '@hbwow/validate-antd';
 import { ConfigProvider } from '@hbwow/validate-antd';
+
+const { getRules }  = useGetRules();
+
 <Form.Item
   label='手机号'
   name='phone'
@@ -69,7 +72,7 @@ import { ConfigProvider } from '@hbwow/validate-antd';
   <App />
 </ConfigProvider>
 
-
+const { getRules }  = useGetRules();
 <Form.Item
   label='手机号'
   name='phone'
