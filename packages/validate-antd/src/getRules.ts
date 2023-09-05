@@ -2,7 +2,7 @@
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-09-04 11:06:44
  * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2023-09-04 17:40:46
+ * @LastEditTime: 2023-09-05 11:21:22
  * @FilePath: /more-repo/packages/validate-antd/src/getRules.ts
  * @Description: 统一 antd 校验规则
  */
@@ -16,7 +16,6 @@ type IGetRulesObj = Record<
   string,
   [() => { required: boolean; validator: (_: any, value: any) => Promise<void> }]
 >;
-
 
 const useGetRules = () => {
   const { rulesMap = {} } = useContext(ConfigContext);
@@ -57,7 +56,7 @@ const useGetRules = () => {
       ];
     });
 
-    return obj[name];
+    return obj[name] || [];
   };
 
   return { getRules };

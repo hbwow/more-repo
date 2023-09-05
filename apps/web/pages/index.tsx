@@ -37,13 +37,16 @@ export default function Web() {
   return (
     <ConfigProvider
       rulesMap={{
-        isEmptyIsPhone: (value: string | undefined) => {
-          if(!value){
-            return 'value不能为空！'
+        isEmptyIsPhone: (value: string) => {
+          if (!value) {
+            return 'value不能为空！';
           }
-          if(!new RegExp(/^((13[0-9])|(14[0-9])|(15[0-9])|(17[0-9])|(18[0-9]))\d{8}$/).test(value)){
-            return '请输入正确的手机号码！'
+          if (
+            !new RegExp(/^((13[0-9])|(14[0-9])|(15[0-9])|(17[0-9])|(18[0-9]))\d{8}$/).test(value)
+          ) {
+            return '请输入正确的手机号码！';
           }
+          return '';
         },
       }}
     >

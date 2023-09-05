@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-type IRules = Record<string, (value: any) => string>;
+export type IRules = Record<string, (value: any) => string>;
 
 type IIcon = React.ReactNode;
 
