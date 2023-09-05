@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 
 import { Button } from 'ui';
-import CustomSuspense from '@hbwow/custom-suspense';
-import { HandleInterceptorCode } from '@hbwow/utils';
+// import CustomSuspense from '@hbwow/custom-suspense';
+// import { HandleInterceptorCode } from '@hbwow/utils';
 
-const handleInterceptorCode = new HandleInterceptorCode({
-  ignoreCodes: [200],
-  tokenExpiredCodes: [401],
-});
+import { ConfigProvider } from '@hbwow/validate-antd';
+import TestValidateAntd from './test-validate-antd';
+
+// const handleInterceptorCode = new HandleInterceptorCode({
+//   ignoreCodes: [200],
+//   tokenExpiredCodes: [401],
+// });
 
 export default function Web() {
   const fetchData = (delay: number) => {
@@ -28,16 +31,28 @@ export default function Web() {
       setIsLoading(false);
     });
 
-    handleInterceptorCode.handleCode({ code: 201 });
+    // handleInterceptorCode.handleCode({ code: 201 });
   }, []);
 
   return (
-    <div>
-      <h1>Web</h1>
-      <Button />
+    <ConfigProvider
+      rulesMap={{
+        isEmptyIsPhone: (value: string | undefined) => {
+          if(!value){
+            return 'value不能为空！'
+          }
+          if(!new RegExp(/^((13[0-9])|(14[0-9])|(15[0-9])|(17[0-9])|(18[0-9]))\d{8}$/).test(value)){
+            return '请输入正确的手机号码！'
+          }
+        },
+      }}
+    >
+      <div>
+        <h1>Web</h1>
+        <Button />
 
-      <>
-        <CustomSuspense
+        <>
+          {/* <CustomSuspense
           isLoading={isLoading}
           isFetching={isFetching}
           isError={isError}
@@ -50,26 +65,29 @@ export default function Web() {
           <div style={{ width: '60vw', height: '20vh', backgroundColor: 'red' }}>
             加载成功！！！
           </div>
-        </CustomSuspense>
+        </CustomSuspense> */}
 
-        <button
-          onClick={() => {
-            setIsFetching(true);
-            fetchData(2000).then(() => {
-              setIsFetching(false);
-            });
-          }}
-        >
-          click reFetch
-        </button>
-        <button
-          onClick={() => {
-            setIsError(true);
-          }}
-        >
-          click error
-        </button>
-      </>
-    </div>
+          <button
+            onClick={() => {
+              setIsFetching(true);
+              fetchData(2000).then(() => {
+                setIsFetching(false);
+              });
+            }}
+          >
+            click reFetch
+          </button>
+          <button
+            onClick={() => {
+              setIsError(true);
+            }}
+          >
+            click error
+          </button>
+        </>
+
+        <TestValidateAntd />
+      </div>
+    </ConfigProvider>
   );
 }

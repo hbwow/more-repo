@@ -11,6 +11,8 @@
   "dependencies": {
     "@hbwow/custom-suspense": "workspace:^",
     "@hbwow/utils": "workspace:^",
+    "@hbwow/validate-antd": "workspace:^",
+    "antd": "4.x",
     "next": "^13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",

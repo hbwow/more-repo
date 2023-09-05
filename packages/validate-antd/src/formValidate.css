@@ -1,0 +1,8 @@
+.form-error{
+  display: flex;
+  align-items: center;
+}
+
+.form-error > .icon {
+  margin-right: 2px
+}
