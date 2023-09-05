@@ -13,7 +13,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "unpkg": "dist/custom-suspense.min.js",
+  "unpkg": "dist/utils.min.js",
   "typings": "lib/index.d.ts",
   "scripts": {
     "dev": "father dev",
