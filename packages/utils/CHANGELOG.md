@@ -1,5 +1,11 @@
 # @hbwow/utils
 
+## 0.0.3
+
+### Patch Changes
+
+- unpkg 名称问题
+
 ## 0.0.2
 
 ### Patch Changes

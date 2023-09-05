@@ -1,5 +1,12 @@
 # web
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies
+  - @hbwow/utils@0.0.3
+
 ## 0.0.5
 
 ### Patch Changes
