@@ -7,14 +7,14 @@
     "stylelint",
     "prettier"
   ],
-  "homepage": "https://github.com/hbwow/more-repo.git",
-  "bugs": "",
+  "homepage": "https://github.com/hbwow/more-repo/tree/master/packages/lints",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hbwow/more-repo.git"
+    "url": "https://github.com/hbwow/more-repo.git",
+    "directory": "packages/lints"
   },
+  "author": "",
   "license": "MIT",
-  "author": "hbwow",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
   "files": [
