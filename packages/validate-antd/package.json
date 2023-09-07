@@ -2,18 +2,26 @@
   "name": "@hbwow/validate-antd",
   "version": "0.0.1",
   "private": false,
+  "description": "validate-antd",
   "keywords": [
     "validate",
     "antd",
     "utils",
     "frontend"
   ],
+  "homepage": "https://github.com/hbwow/more-repo/tree/master/packages/validate-antd",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hbwow/more-repo.git",
+    "directory": "packages/validate-antd"
+  },
+  "author": "",
+  "license": "MIT",
   "files": [
     "dist",
     "lib",
     "es"
   ],
-  "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
   "unpkg": "dist/validate-antd.min.js",
