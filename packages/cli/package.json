@@ -2,6 +2,17 @@
   "name": "@hbwow/cli",
   "version": "1.0.1",
   "description": "cli tool",
+  "keywords": [
+    "cli"
+  ],
+  "homepage": "https://github.com/hbwow/more-repo/tree/master/packages/cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hbwow/more-repo.git",
+    "directory": "packages/cli"
+  },
+  "author": "",
+  "license": "MIT",
   "main": "index.js",
   "bin": {
     "create-hbwow-app": "bin/create-hbwow-app.js"
@@ -14,9 +25,6 @@
     "doctor": "father doctor",
     "version": "father version"
   },
-  "author": "",
-  "keywords": [],
-  "license": "ISC",
   "devDependencies": {
     "father": "^4.1.3"
   },
