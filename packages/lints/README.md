@@ -1,22 +1,29 @@
-# 规则库（eslint prettier stylelint）
+# `@hbwow/lints`（eslint prettier stylelint）
 
 ## 安装
-### 安装 npm 包
-```shell
+
+```BASH
 npm i @hbwow/lints -D
+#or
+yarn i @hbwow/lints -D
 #or
 pnpm add @hbwow/lints -D
 ```
 
 ### 安装 eslint stylelint prettier
-```shell
+
+```BASH
 npm i eslint stylelint prettier -D
+#or
+yarn i eslint stylelint prettier -D
 #or
 pnpm add eslint stylelint prettier -D
 ```
 
 ## 配置
+
 package.json
+
 ```json
 "scripts": {
   "eslint": "eslint src --fix --ext .js,.jsx,.ts,.tsx",
@@ -26,6 +33,7 @@ package.json
 ```
 
 .eslintrc.js
+
 ```js
 module.exports = {
   extends: [require.resolve('@hbwow/lints/dist/eslint')],
@@ -33,6 +41,7 @@ module.exports = {
 ```
 
 .stylelintrc.js
+
 ```js
 module.exports = {
   extends: [require.resolve('@hbwow/lints/dist/stylelint')],
@@ -40,6 +49,7 @@ module.exports = {
 ```
 
 .prettierrc.js
+
 ```js
 const prettier = require('@hbwow/lints/dist/prettier');
 
@@ -49,13 +59,17 @@ module.exports = {
 ```
 
 ## 与 Git 工作流结合
-```shell
+
+```BASH
 npm i lint-staged -D
+#or
+yarn add lint-staged -D
 #or
 pnpm add lint-staged -D
 ```
 
 package.json
+
 ```json
 "lint-staged": {
   "*.{ts,tsx,js,jsx}": [
@@ -71,7 +85,8 @@ package.json
 ```
 
 ## Husky
-```shell
+
+```BASH
 npx husky-init && npm install
 #or
 pnpm dlx husky-init && pnpm install
@@ -80,6 +95,7 @@ pnpm dlx husky-init && pnpm install
 **修改 pre-commit**
 
 .husky/pre-commit
+
 ```
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
@@ -88,24 +104,31 @@ npx lint-staged
 ```
 
 ### commit 规范
+
 添加 commit-msg 钩子
-```shell
+
+```BASH
 npx husky add .husky/commit-msg 'npm run commitlint'
 ```
 
 安装
-```shell
+
+```BASH
 npm i @commitlint/cli @commitlint/config-conventional -D
+#or
+yarn add @commitlint/cli @commitlint/config-conventional -D
 #or
 pnpm add @commitlint/cli @commitlint/config-conventional -D
 ```
 
 .commitlintrc.js
+
 ```js
 module.exports = { extends: ['@commitlint/config-conventional'] };
 ```
 
 package.json
+
 ```json
 "scripts": {
   "commitlint": "commitlint --config .commitlintrc.js -e -V",
@@ -113,7 +136,9 @@ package.json
 ```
 
 ## VS Code 配置
+
 .vscode/settings.json
+
 ```json
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
