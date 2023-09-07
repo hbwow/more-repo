@@ -1,18 +1,26 @@
 {
   "name": "@hbwow/custom-suspense",
   "version": "0.0.1",
+  "description": "自定义 suspense 组件，与 react-query、SWR 等结合使用更佳",
   "keywords": [
     "component",
     "frontend",
     "react",
     "react-component"
   ],
+  "homepage": "https://github.com/hbwow/more-repo/tree/master/packages/custom-suspense",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hbwow/more-repo.git",
+    "directory": "packages/custom-suspense"
+  },
+  "author": "",
+  "license": "MIT",
   "files": [
     "dist",
     "lib",
     "es"
   ],
-  "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
   "unpkg": "dist/custom-suspense.min.js",
