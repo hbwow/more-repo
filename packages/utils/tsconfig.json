@@ -3,6 +3,8 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "target": "es6",
+    "lib": ["ES2015", "ES2016", "DOM"]
   }
 }

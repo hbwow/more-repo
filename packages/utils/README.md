@@ -14,14 +14,16 @@ yarn i @hbwow/utils
 pnpm i @hbwow/utils
 ```
 
+## API
+
 ### HandleInterceptorCode
 
 ```ts
 import { HandleInterceptorCode } from '@hbwow/utils';
 
 const handleInterceptorCode = new HandleInterceptorCode({
-  ignoreCodes: [200], // 需要忽略的 code list
-  tokenExpiredCodes: [401], // token过期 code list
+  ignoreCodes: [200],
+  tokenExpiredCodes: [401],
 });
 
 handleInterceptorCode.handleCode({ code, message, headers, onCallback, modalProps });
@@ -37,8 +39,18 @@ headers: {
 
 ```
 
-## API
+#### HandleInterceptorCode
 
-| 参数                  | 说明                            | 类型    | 默认值 | 版本  |
-| --------------------- | ------------------------------- | ------- | ------ | ----- |
-| HandleInterceptorCode | 响应拦截code处理，message提示…… | boolean | false  | 0.0.1 |
+| 参数              | 说明            | 类型     | 默认值 | 版本  |
+| ----------------- | --------------- | -------- | ------ | ----- |
+| ignoreCodes       | 需要忽略的 code | number[] | [200]  | 0.0.1 |
+| tokenExpiredCodes | token过期 code  | number[] | [401]  | 0.0.1 |
+
+#### handleCode
+
+| 参数       | 说明                        | 类型                | 默认值   | 版本  |
+| ---------- | --------------------------- | ------------------- | -------- | ----- |
+| code       | 状态码                      | number              | -        | 0.0.1 |
+| message    | 提示信息                    | string              | 未知错误 | 0.0.1 |
+| headers    | 请求头                      | Record<string, any> | {}       | 0.0.1 |
+| modalProps | 提示框使用的是 antd Modal） | ModalProps          | {}       | 0.0.1 |

@@ -2,7 +2,7 @@
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-08-30 17:40:09
  * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2023-09-01 15:38:56
+ * @LastEditTime: 2023-09-07 14:18:03
  * @FilePath: /more-repo/packages/utils/src/handleInterceptorCode.ts
  * @Description: 处理返回拦截code逻辑
  */
@@ -13,7 +13,6 @@ export interface IHandleCodeParams {
   code: number;
   message?: string;
   headers?: Record<string, any>;
-  onCallback?: () => void;
   modalProps?: ModalProps;
 }
 
