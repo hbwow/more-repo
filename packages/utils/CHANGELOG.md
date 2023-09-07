@@ -1,5 +1,11 @@
 # @hbwow/utils
 
+## 1.0.0
+
+### Major Changes
+
+- 完善文档
+
 ## 0.0.3
 
 ### Patch Changes

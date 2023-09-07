@@ -1,5 +1,15 @@
 # web
 
+## 0.0.7
+
+### Patch Changes
+
+- Updated dependencies
+  - @hbwow/custom-suspense@1.0.0
+  - @hbwow/utils@1.0.0
+  - @hbwow/validate-antd@1.0.0
+  - ui@0.0.0
+
 ## 0.0.6
 
 ### Patch Changes

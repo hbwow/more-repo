@@ -1,5 +1,11 @@
 # @hbwow/cli
 
+## 1.1.0
+
+### Minor Changes
+
+- 完善文档
+
 ## 1.0.1
 
 ### Patch Changes
