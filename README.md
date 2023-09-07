@@ -16,11 +16,13 @@ pnpm install react -w
 # D devDependencies
 pnpm install rollup -wD
 
-# 只在某一个package安装
+# 安装  --filter指在某一个安装
 pnpm add <package> --filter <workspace>
 
+# 卸载
 pnpm uninstall <package> --filter <workspace>
 
+# 更新
 pnpm up <package> --filter <workspace>
 
 pnpm build --filter <workspace>
