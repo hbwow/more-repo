@@ -1,6 +1,18 @@
 {
   "name": "@hbwow/tsconfig",
   "version": "0.0.1",
+  "description": "tsconfig",
+  "keywords": [
+    "tsconfig"
+  ],
+  "homepage": "https://github.com/hbwow/more-repo/tree/master/packages/tsconfig",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hbwow/more-repo.git",
+    "directory": "packages/tsconfig"
+  },
+  "author": "",
+  "license": "MIT",
   "files": [
     "base.json",
     "nextjs.json",
