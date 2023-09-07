@@ -7,12 +7,19 @@
     "react",
     "react-component"
   ],
+  "homepage": "https://github.com/hbwow/more-repo/tree/master/packages/custom-suspense",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hbwow/more-repo.git",
+    "directory": "packages/custom-suspense"
+  },
+  "author": "",
+  "license": "MIT",
   "files": [
     "dist",
     "lib",
     "es"
   ],
-  "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
   "unpkg": "dist/custom-suspense.min.js",
