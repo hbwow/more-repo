@@ -6,6 +6,7 @@ import { Button } from 'ui';
 
 import { ConfigProvider } from '@hbwow/validate-antd';
 import TestValidateAntd from './test-validate-antd';
+import TestRouterAnimation from './test-router-animation';
 
 // const handleInterceptorCode = new HandleInterceptorCode({
 //   ignoreCodes: [200],
@@ -90,6 +91,8 @@ export default function Web() {
         </>
 
         <TestValidateAntd />
+
+        <TestRouterAnimation />
       </div>
     </ConfigProvider>
   );

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hbwow/custom-suspense": "workspace:^",
+    "@hbwow/router-animation": "workspace:^",
     "@hbwow/utils": "workspace:^",
     "@hbwow/validate-antd": "workspace:^",
     "antd": "4.x",

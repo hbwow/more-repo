@@ -1,0 +1,52 @@
+{
+  "name": "@hbwow/router-animation",
+  "version": "0.0.0",
+  "keywords": [
+    "animation",
+    "framer-motion",
+    "react",
+    "react-component"
+  ],
+  "homepage": "https://github.com/hbwow/more-repo/tree/master/packages/router-animation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hbwow/more-repo.git",
+    "directory": "packages/router-animation"
+  },
+  "author": "",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "lib",
+    "es"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "unpkg": "dist/router-animation.min.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "dev": "father dev",
+    "build": "father build",
+    "build:ANALYZE": "ANALYZE=1 father build",
+    "build:no-clean": "father build --no-clean",
+    "doctor": "father doctor",
+    "version": "father version"
+  },
+  "devDependencies": {
+    "@hbwow/tsconfig": "workspace:^",
+    "@types/react": "^18.2.21",
+    "father": "^4.1.3",
+    "react": "^18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "engines": {
+    "node": ">= 16.14.0"
+  },
+  "dependencies": {
+    "framer-motion": "^10.16.4"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  }
+}
