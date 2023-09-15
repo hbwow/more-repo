@@ -7,7 +7,7 @@ import { Button } from 'ui';
 import { ConfigProvider } from '@hbwow/validate-antd';
 import TestValidateAntd from './test-validate-antd';
 import TestRouterAnimation from './test-router-animation';
-import { FullBgImage } from '@hbwow/components';
+// import { FullBgImage } from '@hbwow/components';
 
 // const handleInterceptorCode = new HandleInterceptorCode({
 //   ignoreCodes: [200],
@@ -52,7 +52,7 @@ export default function Web() {
         },
       }}
     >
-      <FullBgImage />
+      {/* <FullBgImage /> */}
       <div>
         <h1>Web</h1>
         <Button />
