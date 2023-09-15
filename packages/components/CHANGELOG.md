@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.1.2
+
+### Patch Changes
+
+- 组件导出
+
 ## 2.1.1
 
 ### Patch Changes
