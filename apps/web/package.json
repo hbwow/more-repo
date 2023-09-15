@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hbwow/components": "workspace:^",
     "@hbwow/custom-suspense": "workspace:^",
     "@hbwow/router-animation": "workspace:^",
     "@hbwow/utils": "workspace:^",
