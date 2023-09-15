@@ -1,6 +1,6 @@
 {
   "name": "@hbwow/components",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "keywords": [
     "component",
     "frontend",
@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.2",
-    "antd": "4.x"
+    "antd": "5.x"
   },
   "peerDependencies": {
     "react": ">=16.9.0",
