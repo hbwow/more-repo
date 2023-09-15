@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 1.1.0
+
+### Minor Changes
+
+- 新增components-GlobalWarn
+
 ## 2.0.0
 
 ### Major Changes
