@@ -1,5 +1,12 @@
 # web
 
+## 0.0.14
+
+### Patch Changes
+
+- Updated dependencies
+  - @hbwow/components@2.1.1
+
 ## 0.0.13
 
 ### Patch Changes
