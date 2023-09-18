@@ -2,7 +2,7 @@
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-08-30 17:40:09
  * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2023-09-18 11:04:49
+ * @LastEditTime: 2023-09-18 11:27:40
  * @FilePath: /more-repo/packages/utils/src/handleInterceptorCode.ts
  * @Description: 处理返回拦截code逻辑
  */
@@ -45,9 +45,9 @@ class HandleInterceptorCode {
     headers = {},
     modalProps = {},
     onErrorCallback,
-  }: IHandleCodeParams): void {
+  }: IHandleCodeParams): boolean {
     if (headers['No-Notify-Message'] === 'Y') {
-      return;
+      return true;
     }
 
     const _message = message || '未知错误';
@@ -67,8 +67,7 @@ class HandleInterceptorCode {
       });
 
       onErrorCallback?.();
-
-      return;
+      return false;
     }
 
     if (!this.ignoreCodes.includes(code)) {
@@ -79,9 +78,10 @@ class HandleInterceptorCode {
       });
 
       onErrorCallback?.();
-
-      return;
+      return false;
     }
+
+    return true;
   }
 }
 

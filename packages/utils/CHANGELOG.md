@@ -1,5 +1,17 @@
 # @hbwow/utils
 
+## 2.0.2
+
+### Patch Changes
+
+- return boolean
+
+## 2.0.1
+
+### Patch Changes
+
+- return onErrorCallback
+
 ## 2.0.0
 
 ### Major Changes

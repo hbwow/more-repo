@@ -1,5 +1,19 @@
 # web
 
+## 0.0.19
+
+### Patch Changes
+
+- Updated dependencies
+  - @hbwow/utils@2.0.2
+
+## 0.0.18
+
+### Patch Changes
+
+- Updated dependencies
+  - @hbwow/utils@2.0.1
+
 ## 0.0.17
 
 ### Patch Changes
