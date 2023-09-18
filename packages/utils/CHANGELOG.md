@@ -1,5 +1,11 @@
 # @hbwow/utils
 
+## 1.1.0
+
+### Minor Changes
+
+- 增加 onErrorCallback
+
 ## 1.0.0
 
 ### Major Changes
