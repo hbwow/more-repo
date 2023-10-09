@@ -9,3 +9,6 @@ export type { IGlobalWarnProps } from './globalWarn';
 
 export { default as CustomSelect } from './customSelect';
 export type { ICustomSelectProps } from './customSelect';
+
+export { default as CustomSuspense } from './customSuspense';
+export type { ICustomSuspenseProps } from './customSuspense';

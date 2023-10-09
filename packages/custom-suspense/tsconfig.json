@@ -1,8 +1,0 @@
-{
-  "extends": "@hbwow/tsconfig/react-library.json",
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
-}
