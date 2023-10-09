@@ -1,6 +1,6 @@
 {
   "name": "web",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@hbwow/components": "workspace:^",
-    "@hbwow/custom-suspense": "workspace:^",
     "@hbwow/router-animation": "workspace:^",
     "@hbwow/utils": "workspace:^",
     "@hbwow/validate-antd": "workspace:^",

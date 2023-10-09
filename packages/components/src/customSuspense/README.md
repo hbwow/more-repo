@@ -1,4 +1,4 @@
-# `custom-suspense`
+# `CustomSuspense`
 
 
 ## API

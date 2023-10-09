@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.3.0
+
+### Minor Changes
+
+- 添加 CustomSuspense 组件
+
 ## 2.2.0
 
 ### Minor Changes
