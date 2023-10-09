@@ -1,5 +1,18 @@
 # `CustomSuspense`
 
+> 结合 `react-query` 等请求状态管理器使用；
+
+## 用法
+
+```tsx
+import { CustomSuspense } from '@hbwow/components';
+
+const { isFetching, isLoading, isError } = useQuery();
+
+<CustomSuspense isLoading={isLoading} isFetching={isFetchingToday} isError={isError}>
+  ...
+</CustomSuspense>;
+```
 
 ## API
 

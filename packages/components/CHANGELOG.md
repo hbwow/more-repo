@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.4.0
+
+### Minor Changes
+
+- 文档更新
+
 ## 2.3.0
 
 ### Minor Changes
