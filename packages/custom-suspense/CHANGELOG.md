@@ -1,5 +1,11 @@
 # @hbwow/custom-suspense
 
+## 1.0.1
+
+### Patch Changes
+
+- children放在外面
+
 ## 1.0.0
 
 ### Major Changes

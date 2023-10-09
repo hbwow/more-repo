@@ -36,15 +36,19 @@ const CustomSuspense = (props: ICustomSuspenseProps) => {
     return <Skeleton active {...loadingComProps} />;
   }
 
-  if (isFetching) {
-    return <Spin {...fetchingComProps}>{children}</Spin>;
-  }
+  // if (isFetching) {
+  //   return <Spin {...fetchingComProps}>{children}</Spin>;
+  // }
 
   if (isError) {
     showBoundary({ message: error.message ? error.message : '接口请求错误！' });
   }
 
-  return children;
+  return (
+    <Spin spinning={isFetching} {...fetchingComProps}>
+      {children}
+    </Spin>
+  );
 };
 
 const Index = (props: ICustomSuspenseProps) => {
@@ -85,11 +89,6 @@ const Index = (props: ICustomSuspenseProps) => {
       <CustomSuspense {...props} />
     </ErrorBoundary>
   );
-  // return (
-  //   <Spin spinning={isFetching} {...fetchingComProps}>
-  //     {children}
-  //   </Spin>
-  // );
 };
 
 export default Index;
