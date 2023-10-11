@@ -8,8 +8,6 @@ const PAGE_SIZE_OPTIONS = [10, 15, 20];
 
 import { create } from 'zustand';
 
-type AnyObject = Record<PropertyKey, any>;
-
 // global store
 const useStore = create<{ globalState: any; setGlobalState: (nextData: any) => any }>((set) => ({
   globalState: {},
@@ -19,8 +17,9 @@ const useStore = create<{ globalState: any; setGlobalState: (nextData: any) => a
 
 interface IUseSearchAndTable<TQueryParams, TData, TError, TFormValue, TPagination> {
   form: FormInstance<any>; // 表单 form
-  columns: (ColumnGroupType<AnyObject> | ColumnType<AnyObject>)[]; // table columns
-  reactQuery: (params: TQueryParams) => UseQueryResult<TData, TError>; // react query
+  columns: (ColumnGroupType<any> | ColumnType<any>)[]; // table columns
+  // reactQuery: (params: TQueryParams) => UseQueryResult<TData, TError>; // react query
+  reactQuery: (params: TQueryParams) => any; // react query
   defaultSearchFormValues?: TFormValue; // 默认的搜索表单数据（请填写完整，不然 重置 会出现部分没有重置）
   defaultPagination?: TPagination; // 默认的分页参数
   defaultTableProps?: TableProps<any>; // 默认的表格 props
