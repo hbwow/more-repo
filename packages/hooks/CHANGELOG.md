@@ -1,5 +1,11 @@
 # @hbwow/hooks
 
+## 2.0.0
+
+### Major Changes
+
+- antd升级5.x
+
 ## 1.0.0
 
 ### Major Changes
