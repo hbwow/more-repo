@@ -1,5 +1,11 @@
 # @hbwow/hooks
 
+## 2.0.3
+
+### Patch Changes
+
+- 参数必填改非必填
+
 ## 2.0.2
 
 ### Patch Changes
