@@ -1,5 +1,12 @@
 # web-vite
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies
+  - @hbwow/hooks@2.0.6
+
 ## 0.0.8
 
 ### Patch Changes
