@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { UseQueryResult } from '@tanstack/react-query';
 
 import type { TableProps, PaginationProps, FormInstance } from 'antd';
-import type { ColumnGroupType, ColumnType } from 'antd/es/table';
+import type { ColumnGroupType, ColumnType, ColumnsType } from 'antd/es/table';
 
 const PAGE_SIZE_OPTIONS = [10, 15, 20];
 
@@ -17,7 +17,7 @@ const useStore = create<{ globalState: any; setGlobalState: (nextData: any) => a
 
 interface IUseSearchAndTable<TQueryParams, TData, TError, TFormValue, TPagination> {
   form?: FormInstance<any>; // 表单 form
-  columns: (ColumnGroupType<any> | ColumnType<any>)[]; // table columns
+  columns: (ColumnGroupType<any> | ColumnType<any>)[] | ColumnsType<any>[]; // table columns
   // reactQuery: (params: TQueryParams) => UseQueryResult<TData, TError>; // react query
   reactQuery: (params: TQueryParams) => any; // react query
   defaultSearchFormValues?: TFormValue; // 默认的搜索表单数据（请填写完整，不然 重置 会出现部分没有重置）

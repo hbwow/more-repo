@@ -1,7 +1,7 @@
 {
   "name": "web-vite",
   "private": true,
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@hbwow/hooks": "workspace:^",
+    "antd": "^5.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
