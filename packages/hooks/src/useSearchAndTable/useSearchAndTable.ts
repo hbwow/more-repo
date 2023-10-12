@@ -17,12 +17,12 @@ const useStore = create<{ globalState: any; setGlobalState: (nextData: any) => a
 
 interface IUseSearchAndTable<TQueryParams, TData, TError, TFormValue, TPagination> {
   form?: FormInstance<any>; // 表单 form
-  columns: (ColumnGroupType<any> | ColumnType<any>)[] | ColumnsType<any>[]; // table columns
+  columns: (ColumnGroupType<any> | ColumnType<any>)[]; // table columns
   // reactQuery: (params: TQueryParams) => UseQueryResult<TData, TError>; // react query
   reactQuery: (params: TQueryParams) => any; // react query
   defaultSearchFormValues?: TFormValue; // 默认的搜索表单数据（请填写完整，不然 重置 会出现部分没有重置）
   defaultPagination?: TPagination; // 默认的分页参数
-  defaultTableProps?: TableProps<any>; // 默认的表格 props
+  defaultTableProps?: Record<string, any>; // 默认的表格 props
   // defaultTableProps?: TableProps<RecordType>; // 默认的表格 props
   defaultPaginationProps?: PaginationProps; // 默认分页 props
   formatParams?: (formValues: TFormValue) => TFormValue; // 表单数据 与 请求体不同的时候 调用该方法格式化
@@ -30,7 +30,7 @@ interface IUseSearchAndTable<TQueryParams, TData, TError, TFormValue, TPaginatio
 
 interface IUseSearchAndTableReturn<TData, TError, TFormValue> {
   queryReturn: UseQueryResult<TData, TError>; // react query 所有的返回
-  tableProps: TableProps<any>; // 表格 props
+  tableProps: Record<string, any>; // 表格 props
   // tableProps: TableProps<RecordType>; // 表格 props
   paginationProps: PaginationProps; // 分页 props
   defaultSearchFormValues: TFormValue; // 默认的搜索表单数据

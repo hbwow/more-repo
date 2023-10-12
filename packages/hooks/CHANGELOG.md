@@ -1,5 +1,11 @@
 # @hbwow/hooks
 
+## 2.0.5
+
+### Patch Changes
+
+- ts完善
+
 ## 2.0.4
 
 ### Patch Changes
