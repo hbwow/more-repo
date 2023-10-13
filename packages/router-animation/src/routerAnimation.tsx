@@ -14,7 +14,7 @@ interface IProps {
   routerAnimationMode?: IRouterAnimationMode; // 动画效果
   action?: IAction; // 当前的导航类型或用户如何到达当前页面；通过历史堆栈上的弹出、推送或替换操作。
   motionProps?: MotionProps; // framer-motion其余参数
-  key: React.Key; // 用于告诉 motion 刷新
+  motionKey: React.Key; // 用于告诉 motion 刷新
   children?: React.ReactNode;
 }
 
@@ -22,7 +22,7 @@ const RouterAnimation = ({
   children,
   action = 'PUSH',
   routerAnimationMode = 'fade',
-  key,
+  motionKey,
   motionProps = {},
 }: IProps) => {
   const { PushVariants, PopVariants } = getVariants(routerAnimationMode);
@@ -30,10 +30,10 @@ const RouterAnimation = ({
 
   return (
     <motion.div
-      initial="initial" // 与 variants 对应
-      animate="in" // 与 variants 对应
-      exit="out" // 与 variants 对应
-      key={key}
+      initial='initial' // 与 variants 对应
+      animate='in' // 与 variants 对应
+      exit='out' // 与 variants 对应
+      key={motionKey}
       transition={routerTransition}
       variants={action === ActionEnum.POP ? PopVariants : PushVariants}
       {...motionProps}

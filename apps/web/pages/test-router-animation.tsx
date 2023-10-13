@@ -25,7 +25,7 @@ const Test = () => {
           );
         })}
       </ul>
-      <RouterAnimation key={cur} routerAnimationMode='slide'>
+      <RouterAnimation motionKey={cur} routerAnimationMode='slide'>
         {router[cur]}
       </RouterAnimation>
     </div>

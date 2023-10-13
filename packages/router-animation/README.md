@@ -26,7 +26,7 @@ const action = useNavigationType();
   <RouterAnimation
     routerAnimationMode={routerAnimationMode}
     action={action}
-    key={location.pathname}
+    motionKey={location.pathname}
   >
     <div>
       <Outlet />
@@ -42,7 +42,7 @@ const action = useNavigationType();
 | routerAnimationMode | 动画效果 | IRouterAnimationMode | 'fade' | 0.0.1 |
 | action | 当前的导航类型或用户如何到达当前页面；通过历史堆栈上的弹出、推送或替换操作 | IAction | 'PUSH' | 0.0.1 |
 | motionProps | framer-motion其余参数 | MotionProps | {} | 0.0.1 |
-| key | 用于告诉 motion 刷新 | React.Key | - | 0.0.1 |
+| motionKey | 用于告诉 motion 刷新 | React.Key | - | 0.0.1 |
 
 ### IRouterAnimationMode
 
