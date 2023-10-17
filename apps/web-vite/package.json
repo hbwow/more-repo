@@ -11,6 +11,10 @@
   },
   "dependencies": {
     "@hbwow/hooks": "workspace:^",
+    "@hbwow/components": "workspace:^",
+    "@hbwow/router-animation": "workspace:^",
+    "@hbwow/utils": "workspace:^",
+    "@hbwow/validate-antd": "workspace:^",
     "antd": "^5.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

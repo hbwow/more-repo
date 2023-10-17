@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-import RouterAnimation from '@hbwow/router-animation';
-
 const Test = () => {
   const [cur, setCur] = useState<string>('home');
   const router: Record<string, React.ReactNode> = {
@@ -25,9 +23,6 @@ const Test = () => {
           );
         })}
       </ul>
-      <RouterAnimation motionKey={cur} routerAnimationMode='slide'>
-        {router[cur]}
-      </RouterAnimation>
     </div>
   );
 };
