@@ -2,8 +2,8 @@
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-08-30 17:40:09
  * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2023-09-18 11:27:40
- * @FilePath: /more-repo/packages/utils/src/handleInterceptorCode.ts
+ * @LastEditTime: 2023-10-17 11:31:43
+ * @FilePath: /more-repo/packages/utils/src/handleInterceptorCode/handleInterceptorCode.ts
  * @Description: 处理返回拦截code逻辑
  */
 
@@ -25,7 +25,7 @@ class HandleInterceptorCode {
   // modal 默认配置
   private commonModalConfig = {
     closable: false,
-    maskClosable: true,
+    maskClosable: false,
     keyboard: false,
     okText: '知道了',
   };

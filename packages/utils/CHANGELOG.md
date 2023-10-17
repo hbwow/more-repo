@@ -1,5 +1,11 @@
 # @hbwow/utils
 
+## 2.0.3
+
+### Patch Changes
+
+- 解决HandleInterceptorCode点击蒙版关闭问题&目录结构优化
+
 ## 2.0.2
 
 ### Patch Changes
