@@ -1,12 +1,12 @@
-import { HandleInterceptorCode } from '@hbwow/utils';
+// import { HandleInterceptorCode } from '@hbwow/utils';
 import { useEffect } from 'react';
 
 import { FullBgImage } from '@hbwow/components';
 
-const handleInterceptorCode = new HandleInterceptorCode({
-  ignoreCodes: [200],
-  tokenExpiredCodes: [401],
-});
+// const handleInterceptorCode = new HandleInterceptorCode({
+//   ignoreCodes: [200],
+//   tokenExpiredCodes: [401],
+// });
 
 function App() {
   useEffect(() => {

@@ -67,6 +67,7 @@ const handleSearch = async () => {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
+| storeKey | 用于全局缓存搜索条件，有则全局缓存，无则不需要缓存 (通常使用路由值，防止重复) | string | - |  |
 | form | 表单 form | FormInstance<any> | - |  |
 | columns | table columns | (ColumnGroupType<AnyObject> \| ColumnType<AnyObject>)[] | - |  |
 | reactQuery | react query | (params: TQueryParams) => UseQueryResult<TData, TError> | - |  |

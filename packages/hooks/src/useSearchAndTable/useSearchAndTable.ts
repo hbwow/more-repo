@@ -16,6 +16,7 @@ const useStore = create<{ globalState: any; setGlobalState: (nextData: any) => a
 }));
 
 interface IUseSearchAndTable<TQueryParams, TData, TError, TFormValue, TPagination> {
+  storeKey?: string; // 用于全局缓存搜索条件，有则全局缓存，无则不需要缓存 (通常使用路由值，防止重复)
   form?: FormInstance<any>; // 表单 form
   columns: Record<string, any>[]; // table columns
   // reactQuery: (params: TQueryParams) => UseQueryResult<TData, TError>; // react query
@@ -45,13 +46,14 @@ const useSearchAndTable = <
   TFormValue = unknown,
   TPagination = unknown,
 >({
+  storeKey,
+  form,
+  columns,
   reactQuery,
   defaultSearchFormValues = {} as TFormValue,
   defaultPagination = { page: 1, size: 10 } as TPagination,
   defaultTableProps = {},
   defaultPaginationProps = {},
-  columns,
-  form,
   formatParams,
 }: IUseSearchAndTable<
   TQueryParams,
@@ -65,14 +67,18 @@ const useSearchAndTable = <
 
   const defaultParams = { ...defaultSearchFormValues, ...defaultPagination } as TQueryParams;
 
-  const defaultIncludeGlobalParams = { ...defaultParams, ...globalState };
+  const defaultIncludeGlobalParams = storeKey
+    ? { ...defaultParams, ...globalState[storeKey] }
+    : { ...defaultParams };
 
   const [params, setParams] = useState<TQueryParams>(defaultIncludeGlobalParams);
 
   // 类似中间件 存一次在全局
   useEffect(() => {
-    setGlobalState(params);
-  }, [params]);
+    if (storeKey) {
+      setGlobalState({ [storeKey]: params });
+    }
+  }, [params, storeKey]);
 
   const curParams = useMemo(() => {
     if (formatParams) {
