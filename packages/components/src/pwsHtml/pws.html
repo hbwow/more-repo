@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loading……</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .pws-loading {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        margin-bottom: 20px;
+      }
+
+      .pws-shape {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        border-radius: 50%;
+        top: 40%;
+      }
+
+      .pws-shape-1 {
+        background-color: #3ca444;
+        animation: animationShape1 1s ease infinite;
+      }
+
+      .pws-shape-2 {
+        background-color: #9ddba2;
+        left: 10px;
+      }
+
+      .pws-shape-3 {
+        background-color: #085e17;
+        left: 20px;
+      }
+
+      .pws-shape-4 {
+        background-color: #5b956c;
+        left: 30px;
+        animation: animationShape4 1s ease infinite;
+      }
+
+      @keyframes animationShape1 {
+        0% {
+          left: -15px;
+          top: 5px;
+        }
+
+        25% {
+          left: 0;
+          top: 40%;
+        }
+
+        50% {
+          left: 0;
+          top: 40%;
+        }
+
+        75% {
+          left: 0;
+          top: 40%;
+        }
+
+        100% {
+          left: -15px;
+          top: 5px;
+        }
+      }
+
+      @keyframes animationShape4 {
+        0% {
+          left: 30px;
+          top: 40%;
+        }
+
+        25% {
+          left: 30px;
+          top: 40%;
+        }
+
+        50% {
+          left: 45px;
+          top: 5px;
+        }
+
+        75% {
+          left: 30px;
+          top: 40%;
+        }
+
+        100% {
+          left: 30px;
+          top: 40%;
+        }
+      }
+
+      .pws-dotting {
+        display: inline-block;
+        min-width: 2px;
+        min-height: 2px;
+        box-shadow:
+          2px 0 currentColor,
+          6px 0 currentColor,
+          10px 0 currentColor; /* for IE9+, ..., 3个点 */
+        animation: dot 1s infinite step-start both; /* for IE10+, ... */
+      }
+      .pws-dotting:before {
+        content: '...';
+      }
+      .pws-dotting:before {
+        content: '';
+      }
+      @keyframes dot {
+        25% {
+          box-shadow: none;
+        } /* 0个点 */
+        50% {
+          box-shadow: 2px 0 currentColor;
+        } /* 1个点 */
+        75% {
+          box-shadow:
+            2px 0 currentColor,
+            6px 0 currentColor; /* 2个点 */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      "
+    >
+      <div class="pws-loading">
+        <div class="pws-shape pws-shape-1"></div>
+        <div class="pws-shape pws-shape-2"></div>
+        <div class="pws-shape pws-shape-3"></div>
+        <div class="pws-shape pws-shape-4"></div>
+      </div>
+      <div style="color: #305c3f; display: flex; align-items: center; justify-content: center">
+        Loading
+        <span class="pws-dotting"></span>
+      </div>
+    </div>
+  </body>
+</html>

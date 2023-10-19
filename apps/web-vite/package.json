@@ -1,7 +1,7 @@
 {
   "name": "web-vite",
   "private": true,
-  "version": "0.0.11",
+  "version": "0.0.13",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@hbwow/hooks": "workspace:^",
     "@hbwow/components": "workspace:^",
+    "@hbwow/hooks": "workspace:^",
     "@hbwow/router-animation": "workspace:^",
     "@hbwow/utils": "workspace:^",
     "@hbwow/validate-antd": "workspace:^",
@@ -29,6 +29,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vite-plugin-static-copy": "^0.17.0"
   }
 }

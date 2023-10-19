@@ -1,5 +1,17 @@
 # @hbwow/components
 
+## 2.5.1
+
+### Patch Changes
+
+- 修复路径问题
+
+## 2.5.0
+
+### Minor Changes
+
+- 增加pwsHtml组件，用于白屏等待时加载的loading动画
+
 ## 2.4.0
 
 ### Minor Changes
