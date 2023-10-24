@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.5.2
+
+### Patch Changes
+
+- pwsHtml改色
+
 ## 2.5.1
 
 ### Patch Changes
