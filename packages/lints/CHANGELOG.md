@@ -1,5 +1,11 @@
 # @hbwow/lints
 
+## 2.1.1
+
+### Patch Changes
+
+- stylelint at-rule-no-unknown
+
 ## 2.1.0
 
 ### Minor Changes
