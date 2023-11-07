@@ -1,5 +1,23 @@
 # @hbwow/hooks
 
+## 2.2.2
+
+### Patch Changes
+
+- current Number
+
+## 2.2.1
+
+### Patch Changes
+
+- 兼容 react-queryV5
+
+## 2.2.0
+
+### Minor Changes
+
+- useSearchAndTable 新增自定义字段
+
 ## 2.1.0
 
 ### Minor Changes

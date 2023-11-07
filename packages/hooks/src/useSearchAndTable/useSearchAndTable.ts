@@ -17,6 +17,12 @@ const useStore = create<{ globalState: any; setGlobalState: (nextData: any) => a
 
 interface IUseSearchAndTable<TQueryParams, TData, TError, TFormValue, TPagination> {
   storeKey?: string; // 用于全局缓存搜索条件，有则全局缓存，无则不需要缓存 (通常使用路由值，防止重复)
+  fieldPage?: string; // page 字段
+  fieldPageSize?: string; // pageSize 字段
+  fieldResDataSource?: string; // res -- dataSource 字段
+  fieldResTotal?: string; // res --  total 字段
+  fieldResPage?: string; // res -- page 字段
+  fieldResPageSize?: string; // res -- pageSize 字段
   form?: FormInstance<any>; // 表单 form
   columns: Record<string, any>[]; // table columns
   // reactQuery: (params: TQueryParams) => UseQueryResult<TData, TError>; // react query
@@ -47,11 +53,17 @@ const useSearchAndTable = <
   TPagination = unknown,
 >({
   storeKey,
+  fieldPage = 'page',
+  fieldPageSize = 'size',
+  fieldResDataSource = 'records',
+  fieldResTotal = 'total',
+  fieldResPage = 'current',
+  fieldResPageSize = 'size',
   form,
   columns,
   reactQuery,
   defaultSearchFormValues = {} as TFormValue,
-  defaultPagination = { page: 1, size: 10 } as TPagination,
+  defaultPagination = {} as TPagination,
   defaultTableProps = {},
   defaultPaginationProps = {},
   formatParams,
@@ -65,7 +77,13 @@ const useSearchAndTable = <
   const globalState = useStore((state) => state.globalState);
   const setGlobalState = useStore((state) => state.setGlobalState);
 
-  const defaultParams = { ...defaultSearchFormValues, ...defaultPagination } as TQueryParams;
+  const _defaultPagination = {
+    [fieldPage]: 1,
+    [fieldPageSize]: 10,
+    ...defaultPagination,
+  };
+
+  const defaultParams = { ...defaultSearchFormValues, ..._defaultPagination } as TQueryParams;
 
   const defaultIncludeGlobalParams = storeKey
     ? { ...defaultParams, ...globalState[storeKey] }
@@ -94,33 +112,37 @@ const useSearchAndTable = <
 
   const tableProps = {
     loading: isFetching,
-    dataSource: data?.records,
+    dataSource: data?.[fieldResDataSource],
     columns: columns,
     ...defaultTableProps,
   };
 
   const paginationProps = {
-    total: data?.total,
-    current: data?.current,
-    pageSize: data?.size,
+    total: data?.[fieldResTotal],
+    current: data ? Number(data[fieldResPage]) : undefined,
+    pageSize: data?.[fieldResPageSize],
     showQuickJumper: true,
     showSizeChanger: true,
     pageSizeOptions: PAGE_SIZE_OPTIONS,
     onChange: (page: number, pageSize: number) => {
-      setParams((old) => ({ ...old, page: page, size: pageSize }));
+      setParams((old) => ({
+        ...old,
+        [fieldPage]: page,
+        [fieldPageSize]: pageSize,
+      }));
     },
     ...defaultPaginationProps,
   };
 
   const onreset = () => {
-    remove();
+    remove?.(); // 防止存在缓存时，不发出请求
 
     form?.setFieldsValue(defaultParams);
     setParams(defaultParams);
   };
 
   const onChangeSearchFormValues = (next: TFormValue) => {
-    remove(); // 防止存在缓存时，不发出请求
+    remove?.(); // 防止存在缓存时，不发出请求
     return setParams({ ...params, ...next });
   };
 
