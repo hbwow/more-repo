@@ -1,5 +1,17 @@
 # @hbwow/components
 
+## 2.6.1
+
+### Patch Changes
+
+- 新增 TableHeaderBtns
+
+## 2.6.0
+
+### Minor Changes
+
+- 新增 TableHeaderBtns
+
 ## 2.5.2
 
 ### Patch Changes

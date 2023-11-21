@@ -1,0 +1,68 @@
+import cx from 'classnames';
+import { RiMoreFill } from 'react-icons/ri';
+
+import { Button, Tooltip, ButtonProps } from 'antd';
+
+type IBtns = (ButtonProps | React.ReactNode)[];
+
+export interface ITableHeaderBtnsProps {
+  leftBtns?: IBtns;
+  rightBtns?: IBtns;
+  leftMaxLength?: number;
+  className?: string;
+}
+
+const TableHeaderBtns = ({
+  leftBtns = [],
+  rightBtns = [],
+  leftMaxLength = 5,
+  className,
+}: ITableHeaderBtnsProps) => {
+  const render = (btns: IBtns, _type = 'normal') => {
+    return btns.map((btnProps, index) => {
+      if (btnProps?.$$typeof) {
+        return btnProps as React.ReactNode;
+      }
+
+      const { className, type, ...rest } = btnProps as ButtonProps;
+
+      return (
+        <Button
+          key={index}
+          type={_type === 'tooltip' ? 'text' : type}
+          className={cx(className, {
+            'ml-6': index !== 0 && _type === 'normal',
+            'mt-6': index !== 0 && _type === 'tooltip',
+          })}
+          {...rest}
+        />
+      );
+    });
+  };
+
+  return (
+    <div className={cx('flex justify-between', className)}>
+      <div className='flex items-center'>
+        {render(leftBtns.slice(0, leftMaxLength))}
+        {leftBtns.length > 5 && (
+          <Tooltip
+            title={
+              <div className='flex flex-col'>
+                {render(leftBtns.slice(leftMaxLength), 'tooltip')}
+              </div>
+            }
+            placement='bottom'
+            color='#fff'
+          >
+            <Button className='ml-6'>
+              <RiMoreFill />
+            </Button>
+          </Tooltip>
+        )}
+      </div>
+      <div>{render(rightBtns)}</div>
+    </div>
+  );
+};
+
+export default TableHeaderBtns;
