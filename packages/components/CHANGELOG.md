@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.7.0
+
+### Minor Changes
+
+- 新增 DeleteBtn
+
 ## 2.6.1
 
 ### Patch Changes
