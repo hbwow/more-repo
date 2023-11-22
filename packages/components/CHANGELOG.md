@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.7.3
+
+### Patch Changes
+
+- 修复自定义传入dom无边距问题
+
 ## 2.7.2
 
 ### Patch Changes

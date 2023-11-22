@@ -22,20 +22,20 @@ const TableHeaderBtns = ({
 }: ITableHeaderBtnsProps) => {
   const render = (btns: IBtns, _type = 'normal') => {
     return btns.map((btnProps, index) => {
-      if (btnProps?.$$typeof) {
-        return btnProps as React.ReactNode;
-      }
-
       const { className, type, ...rest } = btnProps as ButtonProps;
 
-      return (
+      const _className = cx(className, {
+        'ml-6': index !== 0 && _type === 'normal',
+        'mt-6': index !== 0 && _type === 'tooltip',
+      });
+
+      return btnProps?.$$typeof ? (
+        <div className={_className}>{btnProps as React.ReactNode}</div>
+      ) : (
         <Button
           key={index}
           type={_type === 'tooltip' ? 'text' : type}
-          className={cx(className, {
-            'ml-6': index !== 0 && _type === 'normal',
-            'mt-6': index !== 0 && _type === 'tooltip',
-          })}
+          className={_className}
           {...rest}
         />
       );
