@@ -1,0 +1,22 @@
+.ml-6 {
+  margin-left: 6px;
+}
+.mt-6 {
+  margin-top: 6px;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}

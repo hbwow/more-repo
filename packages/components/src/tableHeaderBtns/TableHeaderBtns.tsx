@@ -3,6 +3,8 @@ import { RiMoreFill } from 'react-icons/ri';
 
 import { Button, Tooltip, ButtonProps } from 'antd';
 
+import './index.css';
+
 type IBtns = (ButtonProps | React.ReactNode)[];
 
 export interface ITableHeaderBtnsProps {
@@ -44,7 +46,7 @@ const TableHeaderBtns = ({
     <div className={cx('flex justify-between', className)}>
       <div className='flex items-center'>
         {render(leftBtns.slice(0, leftMaxLength))}
-        {leftBtns.length > 5 && (
+        {leftBtns.length > leftMaxLength && (
           <Tooltip
             title={
               <div className='flex flex-col'>

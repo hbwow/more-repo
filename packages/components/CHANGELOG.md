@@ -1,5 +1,17 @@
 # @hbwow/components
 
+## 2.7.2
+
+### Patch Changes
+
+- 修复展示问题
+
+## 2.7.1
+
+### Patch Changes
+
+- 样式问题
+
 ## 2.7.0
 
 ### Minor Changes
