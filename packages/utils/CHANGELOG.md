@@ -1,5 +1,11 @@
 # @hbwow/utils
 
+## 2.1.0
+
+### Minor Changes
+
+- 新增 md formatTreeData
+
 ## 2.0.3
 
 ### Patch Changes

@@ -3,6 +3,10 @@ import { useEffect } from 'react';
 
 import { FullBgImage, TableHeaderBtns } from '@hbwow/components';
 
+// import { md } from '@hbwow/utils';
+// const { formatTreeData } = md;
+// console.log('🚀🚀🚀 ~ formatTreeData:', formatTreeData);
+
 // import demoPdf from './assets/pdf-open-parameters.pdf';
 // import PdfViewer, { pdfViewerFn } from '@hbwow/pdf-viewer';
 
@@ -43,7 +47,9 @@ function App() {
           { children: '复制创建订单' },
           { children: '复制创建订单' },
           { children: '复制创建订单' },
-          <div style={{border:'1px solid'}} className='bg-red'>1111</div>,
+          <div style={{ border: '1px solid' }} className='bg-red'>
+            1111
+          </div>,
           { children: '复制创建订单' },
         ]}
       />
