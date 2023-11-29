@@ -28,7 +28,7 @@ interface IUseSearchAndTable<TQueryParams, TData, TError, TFormValue, TPaginatio
   // reactQuery: (params: TQueryParams) => UseQueryResult<TData, TError>; // react query
   reactQuery: (params: TQueryParams) => any; // react query
   defaultSearchFormValues?: TFormValue; // 默认的搜索表单数据（请填写完整，不然 重置 会出现部分没有重置）
-  defaultPagination?: TPagination; // 默认的分页参数
+  defaultPagination?: TPagination | false; // 默认的分页参数  false：不需要分页的场景
   defaultTableProps?: Record<string, any>; // 默认的表格 props
   // defaultTableProps?: TableProps<RecordType>; // 默认的表格 props
   defaultPaginationProps?: PaginationProps; // 默认分页 props
@@ -77,11 +77,14 @@ const useSearchAndTable = <
   const globalState = useStore((state) => state.globalState);
   const setGlobalState = useStore((state) => state.setGlobalState);
 
-  const _defaultPagination = {
-    [fieldPage]: 1,
-    [fieldPageSize]: 10,
-    ...defaultPagination,
-  };
+  const _defaultPagination =
+    defaultPagination === false
+      ? {}
+      : {
+          [fieldPage]: 1,
+          [fieldPageSize]: 10,
+          ...defaultPagination,
+        };
 
   const defaultParams = { ...defaultSearchFormValues, ..._defaultPagination } as TQueryParams;
 

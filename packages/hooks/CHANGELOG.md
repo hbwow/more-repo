@@ -1,5 +1,11 @@
 # @hbwow/hooks
 
+## 2.2.3
+
+### Patch Changes
+
+- useSearchAndTable 适配没有分页的场景
+
 ## 2.2.2
 
 ### Patch Changes
