@@ -1,5 +1,11 @@
 # @hbwow/hooks
 
+## 2.3.0
+
+### Minor Changes
+
+- 添加 useDownload handleDownload
+
 ## 2.2.3
 
 ### Patch Changes
