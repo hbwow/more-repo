@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.7.4
+
+### Patch Changes
+
+- TableHeaderBtns 样式修改
+
 ## 2.7.3
 
 ### Patch Changes

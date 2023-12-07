@@ -62,7 +62,7 @@ const TableHeaderBtns = ({
           </Tooltip>
         )}
       </div>
-      <div>{render(rightBtns)}</div>
+      <div className='flex items-center'>{render(rightBtns)}</div>
     </div>
   );
 };
