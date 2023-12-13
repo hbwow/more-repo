@@ -5,7 +5,13 @@ const curScript = document.querySelector('script[src*="/pwsHtml/index.js"]');
 
 const xhr = new XMLHttpRequest();
 
-xhr.open('GET', '/pwsHtml/pws.html', true);
+xhr.open(
+  'GET',
+  `${
+    curScript && curScript.dataset && curScript.dataset.BASE_URL ? curScript.dataset.BASE_URL : ''
+  }/pwsHtml/pws.html`,
+  true,
+);
 
 xhr.onreadystatechange = function () {
   if (xhr.readyState === 4 && xhr.status === 200) {

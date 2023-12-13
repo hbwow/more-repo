@@ -1,5 +1,17 @@
 # @hbwow/components
 
+## 2.7.6
+
+### Patch Changes
+
+- pwsHtml BASE_URL
+
+## 2.7.5
+
+### Patch Changes
+
+- pwsHtml 绝对路径替换为相对路径
+
 ## 2.7.4
 
 ### Patch Changes
