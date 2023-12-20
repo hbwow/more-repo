@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import cx from 'classnames';
 
+import './index.css';
+
 export interface IPdfViewerProps {
   blob: Blob;
   width?: number;
@@ -27,13 +29,13 @@ const PdfViewer = ({
   }, [blob]);
 
   return (
-    blob && (
-      <div style={{ ...style, width: width, height: height }} className={cx('', className)}>
+    <div style={{ ...style, width: width, height: height }} className={cx('pdf-viewer', className)}>
+      {blob && (
         <iframe src={iframeSrc} style={{ width: '100%', height: '100%' }}>
           <p>您的浏览器不支持 iframe 标签，请从列表中下载预览</p>
         </iframe>
-      </div>
-    )
+      )}
+    </div>
   );
 };
 
