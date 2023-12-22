@@ -1,5 +1,5 @@
 // import { HandleInterceptorCode } from '@hbwow/utils';
-import { useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { FullBgImage, TableHeaderBtns } from '@hbwow/components';
 // import { useDownload, handleDownload } from '@hbwow/hooks';
@@ -8,8 +8,8 @@ import { FullBgImage, TableHeaderBtns } from '@hbwow/components';
 // const { formatTreeData } = md;
 // console.log('🚀🚀🚀 ~ formatTreeData:', formatTreeData);
 
-// import demoPdf from './assets/pdf-open-parameters.pdf';
-// import PdfViewer, { pdfViewerFn } from '@hbwow/pdf-viewer';
+import demoPdf from './assets/pdf-open-parameters.pdf';
+import PdfViewer, { pdfViewerFn } from '@hbwow/pdf-viewer';
 
 // const handleInterceptorCode = new HandleInterceptorCode({
 //   ignoreCodes: [200],
@@ -17,24 +17,25 @@ import { FullBgImage, TableHeaderBtns } from '@hbwow/components';
 // });
 
 function App() {
-  // const [blob, setBlob] = useState<Blob>();
+  const [blob, setBlob] = useState<Blob>();
+  const refPdfViewer = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
     // handleInterceptorCode.handleCode({ code: 401 });
   }, []);
 
-  // useEffect(() => {
-  //   function pdfToBlob(pdfUrl) {
-  //     return fetch(pdfUrl)
-  //       .then((response) => response.blob())
-  //       .then((blob) => {
-  //         pdfViewerFn(blob);
-  //         setBlob(blob);
-  //       });
-  //   }
+  useEffect(() => {
+    function pdfToBlob(pdfUrl) {
+      return fetch(pdfUrl)
+        .then((response) => response.blob())
+        .then((blob) => {
+          // pdfViewerFn(blob);
+          setBlob(blob);
+        });
+    }
 
-  //   pdfToBlob(demoPdf);
-  // }, []);
+    pdfToBlob(demoPdf);
+  }, []);
 
   return (
     <>
@@ -55,7 +56,16 @@ function App() {
         ]}
       />
 
-      {/* <PdfViewer blob={blob} /> */}
+      <PdfViewer blob={blob} ref={refPdfViewer} />
+
+      <button
+        onClick={() => {
+          console.log(refPdfViewer, 'refPdfViewer');
+          refPdfViewer.current?.contentWindow?.print();
+        }}
+      >
+        print
+      </button>
     </>
   );
 }

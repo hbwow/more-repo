@@ -1,5 +1,11 @@
 # @hbwow/pdf-viewer
 
+## 1.0.0
+
+### Major Changes
+
+- PdfViewer 添加 forwardRef
+
 ## 0.0.2
 
 ### Patch Changes

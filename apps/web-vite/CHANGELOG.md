@@ -1,5 +1,12 @@
 # web-vite
 
+## 0.0.32
+
+### Patch Changes
+
+- Updated dependencies
+  - @hbwow/pdf-viewer@1.0.0
+
 ## 0.0.31
 
 ### Patch Changes
