@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
 import cx from 'classnames';
 
-import './index.css';
+import './fullBgImage.css';
 
 export interface IFullBgImageProps {
   src?: string;

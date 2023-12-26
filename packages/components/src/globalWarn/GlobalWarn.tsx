@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import warnMp3 from './warn.mp3';
 
-import './index.css';
+import './globalWarn.css';
 
 export interface IGlobalWarnProps {
   className?: string;

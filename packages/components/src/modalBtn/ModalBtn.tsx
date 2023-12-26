@@ -1,7 +1,7 @@
 import { Button, ButtonProps, Modal, ModalFuncProps } from 'antd';
 import cx from 'classnames';
 
-export interface IDeleteBtnProps {
+export interface IModalBtnProps {
   children?: React.ReactNode;
   content?: React.ReactNode;
   className?: string;
@@ -19,7 +19,7 @@ const ModalBtn = ({
   className = '',
   buttonProps = {},
   modalProps = {},
-}: IDeleteBtnProps) => {
+}: IModalBtnProps) => {
   const handleClick = (e) => {
     e.stopPropagation();
     Modal.confirm({

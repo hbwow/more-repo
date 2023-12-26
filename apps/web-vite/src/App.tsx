@@ -1,7 +1,7 @@
 // import { HandleInterceptorCode } from '@hbwow/utils';
 import { useState, useEffect, useRef } from 'react';
 
-import { FullBgImage, TableHeaderBtns } from '@hbwow/components';
+import { FullBgImage, TableHeaderBtns, Tips } from '@hbwow/components';
 // import { useDownload, handleDownload } from '@hbwow/hooks';
 
 // import { md } from '@hbwow/utils';
@@ -66,6 +66,8 @@ function App() {
       >
         print
       </button>
+
+      <Tips tips='提示' />
     </>
   );
 }

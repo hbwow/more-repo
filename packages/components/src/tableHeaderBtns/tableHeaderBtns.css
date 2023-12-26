@@ -1,0 +1,22 @@
+.table-header-btns-ml-6 {
+  margin-left: 6px;
+}
+.table-header-btns-mt-6 {
+  margin-top: 6px;
+}
+
+.table-header-btns-flex {
+  display: flex;
+}
+
+.table-header-btns-justify-between {
+  justify-content: space-between;
+}
+
+.table-header-btns-items-center {
+  align-items: center;
+}
+
+.table-header-btns-flex-col {
+  flex-direction: column;
+}

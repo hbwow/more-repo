@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.9.0
+
+### Minor Changes
+
+- 新增 Tips 组件 & 一些命名问题的修改
+
 ## 2.8.0
 
 ### Minor Changes
