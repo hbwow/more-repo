@@ -21,3 +21,7 @@ export type { IModalBtnProps } from './modalBtn';
 
 export { default as Tips } from './tips';
 export type { ITipsProps } from './tips';
+
+export { default as OpenNewTabOrWindowBtn } from './openNewTabOrWindowBtn';
+export type { IOpenNewTabOrWindowBtnProps } from './openNewTabOrWindowBtn';
+export { handleOpenNewTabOrWindowBtn } from './openNewTabOrWindowBtn';

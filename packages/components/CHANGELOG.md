@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.10.0
+
+### Minor Changes
+
+- 新增 OpenNewTabOrWindowBtn 组件
+
 ## 2.9.0
 
 ### Minor Changes
