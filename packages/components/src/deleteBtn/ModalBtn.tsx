@@ -1,22 +1,24 @@
-import { Button, ButtonProps, Modal } from 'antd';
+import { Button, ButtonProps, Modal, ModalFuncProps } from 'antd';
 import cx from 'classnames';
 
 export interface IDeleteBtnProps {
   children?: React.ReactNode;
-  onClick?: () => void;
-  onOk?: () => void;
   content?: React.ReactNode;
   className?: string;
+  onClick?: () => void;
+  onOk?: () => void;
   buttonProps?: ButtonProps;
+  modalProps?: ModalFuncProps;
 }
 
-const DeleteBtn = ({
+const ModalBtn = ({
   children = '删除',
   onClick,
   onOk,
   content = '删除数据后，数据无法恢复，是否删除？',
   className = '',
   buttonProps = {},
+  modalProps = {},
 }: IDeleteBtnProps) => {
   const handleClick = (e) => {
     e.stopPropagation();
@@ -24,6 +26,7 @@ const DeleteBtn = ({
       title: '提示',
       content: <div>{content}</div>,
       onOk: onOk,
+      ...modalProps,
     });
   };
 
@@ -39,4 +42,4 @@ const DeleteBtn = ({
   );
 };
 
-export default DeleteBtn;
+export default ModalBtn;

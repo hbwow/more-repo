@@ -16,5 +16,5 @@ export type { ICustomSuspenseProps } from './customSuspense';
 export { default as TableHeaderBtns } from './tableHeaderBtns';
 export type { ITableHeaderBtnsProps } from './tableHeaderBtns';
 
-export { default as DeleteBtn } from './deleteBtn';
+export { default as ModalBtn } from './deleteBtn';
 export type { IDeleteBtnProps } from './deleteBtn';

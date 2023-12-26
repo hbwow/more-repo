@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.8.0
+
+### Minor Changes
+
+- DeleteBtn 更名 ModalBtn
+
 ## 2.7.6
 
 ### Patch Changes

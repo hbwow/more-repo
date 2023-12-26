@@ -1,4 +1,4 @@
-import DeleteBtn from './DeleteBtn';
-export type { IDeleteBtnProps } from './DeleteBtn';
+import ModalBtn from './ModalBtn';
+export type { IDeleteBtnProps } from './ModalBtn';
 
-export default DeleteBtn;
+export default ModalBtn;
