@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.10.1
+
+### Patch Changes
+
+- pwsHtml basename
+
 ## 2.10.0
 
 ### Minor Changes

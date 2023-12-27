@@ -8,7 +8,7 @@ const xhr = new XMLHttpRequest();
 xhr.open(
   'GET',
   `${
-    curScript && curScript.dataset && curScript.dataset.BASE_URL ? curScript.dataset.BASE_URL : ''
+    curScript && curScript.dataset && curScript.dataset.basename ? curScript.dataset.basename : ''
   }/pwsHtml/pws.html`,
   true,
 );
