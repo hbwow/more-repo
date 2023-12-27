@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.11.0
+
+### Minor Changes
+
+- 新增 UploadBtn
+
 ## 2.10.1
 
 ### Patch Changes

@@ -1,7 +1,13 @@
 // import { HandleInterceptorCode } from '@hbwow/utils';
 import { useState, useEffect, useRef } from 'react';
 
-import { FullBgImage, TableHeaderBtns, Tips, OpenNewTabOrWindowBtn } from '@hbwow/components';
+import {
+  FullBgImage,
+  TableHeaderBtns,
+  Tips,
+  OpenNewTabOrWindowBtn,
+  UploadBtn,
+} from '@hbwow/components';
 // import { useDownload, handleDownload } from '@hbwow/hooks';
 
 // import { md } from '@hbwow/utils';
@@ -72,6 +78,13 @@ function App() {
       <OpenNewTabOrWindowBtn href='https://baidu.com' newWindow>
         jump
       </OpenNewTabOrWindowBtn>
+
+      <UploadBtn
+        action='http://airport-freight-dev.psc.sw/afas/ticket/air/freight/importAll'
+        token='Bearer 0e2e652b-9d25-485f-948c-5fdf74625269'
+      >
+        上传
+      </UploadBtn>
     </>
   );
 }

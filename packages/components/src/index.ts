@@ -25,3 +25,6 @@ export type { ITipsProps } from './tips';
 export { default as OpenNewTabOrWindowBtn } from './openNewTabOrWindowBtn';
 export type { IOpenNewTabOrWindowBtnProps } from './openNewTabOrWindowBtn';
 export { handleOpenNewTabOrWindowBtn } from './openNewTabOrWindowBtn';
+
+export { default as UploadBtn } from './uploadBtn';
+export type { IUploadBtnProps } from './uploadBtn';
