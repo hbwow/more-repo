@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.11.1
+
+### Patch Changes
+
+- error message message?: string | ReactNode;
+
 ## 2.11.0
 
 ### Minor Changes

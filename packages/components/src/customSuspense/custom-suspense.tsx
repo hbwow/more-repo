@@ -12,7 +12,7 @@ export interface ICustomSuspenseProps {
   fetchingComProps?: SpinProps;
   isError?: boolean; // 是否失败（接口导致）
   error?: {
-    message?: string;
+    message?: string | ReactNode;
     Fallback?: ReactNode; // 错误渲染的组件
     onReset?: () => void; // 重新按钮点击事件
   };
@@ -62,7 +62,7 @@ const Index = (props: ICustomSuspenseProps) => {
 
     return (
       <div role='alert'>
-        <p>出了点问题:</p>
+        {/* <p>出了点问题:</p> */}
         <pre style={{ color: 'red' }}>{error.message}</pre>
         {isError ? (
           customError.onReset && (
