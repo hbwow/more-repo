@@ -13,6 +13,8 @@ import bg from '@/assets/images/bg.png';
 
 ## API
 
-| 参数 | 说明     | 类型   | 默认值 | 版本 |
-| ---- | -------- | ------ | ------ | ---- |
-| src  | 图片路径 | string | -      |
+| 参数      | 说明     | 类型          | 默认值 | 版本 |
+| --------- | -------- | ------------- | ------ | ---- |
+| src       | 图片路径 | string        | -      |
+| className | 类名     | string        | -      |
+| style     | 样式     | CSSProperties | -      |
