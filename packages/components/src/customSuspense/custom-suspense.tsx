@@ -5,17 +5,19 @@ import { ErrorBoundary, useErrorBoundary, FallbackProps } from 'react-error-boun
 import Skeleton, { SkeletonProps } from './skeleton';
 import Spin, { SpinProps } from './spin';
 
+export interface IError {
+  message?: string | ReactNode;
+  Fallback?: ReactNode; // 错误渲染的组件
+  onReset?: () => void; // 重新按钮点击事件
+}
+
 export interface ICustomSuspenseProps {
   isLoading?: boolean; // 是否加载中(一般为第一次)
   loadingComProps?: SkeletonProps;
   isFetching?: boolean; // 是否请求中
   fetchingComProps?: SpinProps;
   isError?: boolean; // 是否失败（接口导致）
-  error?: {
-    message?: string | ReactNode;
-    Fallback?: ReactNode; // 错误渲染的组件
-    onReset?: () => void; // 重新按钮点击事件
-  };
+  error?: IError;
   children?: ReactNode;
 }
 
