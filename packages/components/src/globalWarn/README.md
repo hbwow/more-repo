@@ -16,3 +16,5 @@ import { GlobalWarn } from '@hbwow/components';
 | ---------- | ---------------- | --------------------------------------- | ------ | ---- |
 | open       | 全局警告是否开启 | boolean                                 | false  |
 | audioProps | audio props      | AudioHTMLAttributes\<HTMLAudioElement\> | {}     |
+| className  | 类名             | string                                  | -      |
+| style      | 样式             | CSSProperties                           | -      |
