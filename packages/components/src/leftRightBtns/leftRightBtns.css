@@ -1,0 +1,22 @@
+.left-right-btns-ml-6 {
+  margin-left: 6px;
+}
+.left-right-btns-mt-6 {
+  margin-top: 6px;
+}
+
+.left-right-btns-flex {
+  display: flex;
+}
+
+.left-right-btns-justify-between {
+  justify-content: space-between;
+}
+
+.left-right-btns-items-center {
+  align-items: center;
+}
+
+.left-right-btns-flex-col {
+  flex-direction: column;
+}

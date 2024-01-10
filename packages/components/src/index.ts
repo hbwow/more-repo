@@ -13,8 +13,8 @@ export type { ICustomSelectProps } from './customSelect';
 export { default as CustomSuspense } from './customSuspense';
 export type { ICustomSuspenseProps } from './customSuspense';
 
-export { default as TableHeaderBtns } from './tableHeaderBtns';
-export type { ITableHeaderBtnsProps } from './tableHeaderBtns';
+export { default as LeftRightBtns } from './leftRightBtns';
+export type { ILeftRightBtnsProps } from './leftRightBtns';
 
 export { default as ModalBtn } from './modalBtn';
 export type { IModalBtnProps } from './modalBtn';

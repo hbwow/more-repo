@@ -3,30 +3,30 @@ import { RiMoreFill } from 'react-icons/ri';
 
 import { Button, Tooltip, ButtonProps } from 'antd';
 
-import './tableHeaderBtns.css';
+import './leftRightBtns.css';
 
 type IBtns = (ButtonProps | React.ReactNode)[];
 
-export interface ITableHeaderBtnsProps {
+export interface ILeftRightBtnsProps {
   leftBtns?: IBtns;
   rightBtns?: IBtns;
   leftMaxLength?: number;
   className?: string;
 }
 
-const TableHeaderBtns = ({
+const LeftRightBtns = ({
   leftBtns = [],
   rightBtns = [],
   leftMaxLength = 5,
   className,
-}: ITableHeaderBtnsProps) => {
+}: ILeftRightBtnsProps) => {
   const render = (btns: IBtns, _type = 'normal') => {
     return btns.map((btnProps, index) => {
       const { className, type, ...rest } = btnProps as ButtonProps;
 
       const _className = cx(className, {
-        'table-header-btns-ml-6': index !== 0 && _type === 'normal',
-        'table-header-btns-mt-6': index !== 0 && _type === 'tooltip',
+        'left-right-btns-ml-6': index !== 0 && _type === 'normal',
+        'left-right-btns-mt-6': index !== 0 && _type === 'tooltip',
       });
 
       return btnProps?.$$typeof ? (
@@ -43,30 +43,28 @@ const TableHeaderBtns = ({
   };
 
   return (
-    <div className={cx('table-header-btns-flex table-header-btns-justify-between', className)}>
-      <div className='table-header-btns-flex table-header-btns-items-center'>
+    <div className={cx('left-right-btns-flex left-right-btns-justify-between', className)}>
+      <div className='left-right-btns-flex left-right-btns-items-center'>
         {render(leftBtns.slice(0, leftMaxLength))}
         {leftBtns.length > leftMaxLength && (
           <Tooltip
             title={
-              <div className='table-header-btns-flex table-header-btns-flex-col'>
+              <div className='left-right-btns-flex left-right-btns-flex-col'>
                 {render(leftBtns.slice(leftMaxLength), 'tooltip')}
               </div>
             }
             placement='bottom'
             color='#fff'
           >
-            <Button className='table-header-btns-ml-6'>
+            <Button className='left-right-btns-ml-6'>
               <RiMoreFill />
             </Button>
           </Tooltip>
         )}
       </div>
-      <div className='table-header-btns-flex table-header-btns-items-center'>
-        {render(rightBtns)}
-      </div>
+      <div className='left-right-btns-flex left-right-btns-items-center'>{render(rightBtns)}</div>
     </div>
   );
 };
 
-export default TableHeaderBtns;
+export default LeftRightBtns;
