@@ -1,5 +1,11 @@
 # @hbwow/hooks
 
+## 2.4.0
+
+### Minor Changes
+
+- 文档更新&细节完善
+
 ## 2.3.0
 
 ### Minor Changes
