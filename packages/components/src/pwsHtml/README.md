@@ -1,6 +1,6 @@
 # `pwsHtml`
 
-> 白屏等待时加载的loading动画；
+> 首次白屏等待时加载的loading动画；
 
 ## 用法
 

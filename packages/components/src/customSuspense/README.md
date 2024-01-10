@@ -1,6 +1,6 @@
 # `CustomSuspense`
 
-> 结合 `react-query` 等请求状态管理器使用；
+> 结合 `react-query` 等请求状态管理器使用，模拟React的Suspense效果
 
 ## 用法
 
