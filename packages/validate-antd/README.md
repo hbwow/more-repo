@@ -1,5 +1,7 @@
 # `@hbwow/validate-antd`
 
+> 将 antd 表单校验逻辑以及校验规则抽离
+
 ## 使用
 
 ### 全局配置
