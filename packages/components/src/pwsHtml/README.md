@@ -28,10 +28,10 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 index.html
 
 ```html
- <head>
-    ...
-    <script src="/pwsHtml/index.js"></script>
-  </head>
+<head>
+  ...
+  <script src="/pwsHtml/index.js"></script>
+</head>
 ```
 
 ### 其他编译器（比如webpack可参照vite使用）
@@ -39,6 +39,6 @@ index.html
 ## API
 
 ```html
-<!-- 这里可以传 data-warpid， 默认为 root -->
-<script type="module" src="/pwsHtml/index.js" data-warpid="app"></script>
+<!-- 这里可以传 data-warpid， 默认为 root； data-basename：基准URL -->
+<script type="module" src="/pwsHtml/index.js" data-warpid="app" data-basename=""></script>
 ```
