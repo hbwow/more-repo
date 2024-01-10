@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.12.0
+
+### Minor Changes
+
+- 文档更新&细节完善
+
 ## 2.11.1
 
 ### Patch Changes

@@ -7,7 +7,7 @@
 ```tsx
 import { LeftRightBtns } from '@hbwow/components';
 
-<TableHeaderBtns
+<LeftRightBtns
   leftBtns={[<ModalBtn>批量删除</ModalBtn>]}
   rightBtns={[
     {

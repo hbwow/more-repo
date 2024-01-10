@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 
 import {
   FullBgImage,
-  TableHeaderBtns,
+  LeftRightBtns,
   Tips,
   OpenNewTabOrWindowBtn,
   UploadBtn,
@@ -50,7 +50,7 @@ function App() {
         <div>2132132</div>
       </div>
 
-      <TableHeaderBtns
+      <LeftRightBtns
         leftBtns={[
           { children: '复制创建订单' },
           { children: '复制创建订单' },
