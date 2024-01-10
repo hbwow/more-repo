@@ -15,14 +15,26 @@ const useStore = create<{ globalState: any; setGlobalState: (nextData: any) => a
     set((state) => ({ globalState: { ...state.globalState, ...nextData } })),
 }));
 
+interface IFieldNames {
+  page?: string; // page 字段
+  pageSize?: string; // pageSize 字段
+  dataSource?: string; // res -- dataSource 字段
+  total?: string; // res --  total 字段
+  current?: string; // res -- page 字段
+  size?: string; // res -- pageSize 字段
+}
+const defaultFieldNames: IFieldNames = {
+  page: 'page',
+  pageSize: 'size',
+  dataSource: 'records',
+  total: 'total',
+  current: 'current',
+  size: 'size',
+};
+
 interface IUseSearchAndTable<TQueryParams, TData, TError, TFormValue, TPagination> {
   storeKey?: string; // 用于全局缓存搜索条件，有则全局缓存，无则不需要缓存 (通常使用路由值，防止重复)
-  fieldPage?: string; // page 字段
-  fieldPageSize?: string; // pageSize 字段
-  fieldResDataSource?: string; // res -- dataSource 字段
-  fieldResTotal?: string; // res --  total 字段
-  fieldResPage?: string; // res -- page 字段
-  fieldResPageSize?: string; // res -- pageSize 字段
+  fieldNames?: IFieldNames; // 自定义节点字段
   form?: FormInstance<any>; // 表单 form
   columns: Record<string, any>[]; // table columns
   // reactQuery: (params: TQueryParams) => UseQueryResult<TData, TError>; // react query
@@ -53,12 +65,7 @@ const useSearchAndTable = <
   TPagination = unknown,
 >({
   storeKey,
-  fieldPage = 'page',
-  fieldPageSize = 'size',
-  fieldResDataSource = 'records',
-  fieldResTotal = 'total',
-  fieldResPage = 'current',
-  fieldResPageSize = 'size',
+  fieldNames = {},
   form,
   columns,
   reactQuery,
@@ -77,12 +84,17 @@ const useSearchAndTable = <
   const globalState = useStore((state) => state.globalState);
   const setGlobalState = useStore((state) => state.setGlobalState);
 
+  const _fieldNames = {
+    ...defaultFieldNames,
+    ...fieldNames,
+  };
+
   const _defaultPagination =
     defaultPagination === false
       ? {}
       : {
-          [fieldPage]: 1,
-          [fieldPageSize]: 10,
+          [_fieldNames.page as string]: 1,
+          [_fieldNames.pageSize as string]: 10,
           ...defaultPagination,
         };
 
@@ -99,6 +111,7 @@ const useSearchAndTable = <
     if (storeKey) {
       setGlobalState({ [storeKey]: params });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params, storeKey]);
 
   const curParams = useMemo(() => {
@@ -107,6 +120,7 @@ const useSearchAndTable = <
     }
 
     return params;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params]);
 
   // const q = reactQuery(params);
@@ -115,23 +129,23 @@ const useSearchAndTable = <
 
   const tableProps = {
     loading: isFetching,
-    dataSource: data?.[fieldResDataSource],
+    dataSource: data?.[_fieldNames.dataSource as string],
     columns: columns,
     ...defaultTableProps,
   };
 
   const paginationProps = {
-    total: data?.[fieldResTotal],
-    current: data ? Number(data[fieldResPage]) : undefined,
-    pageSize: data?.[fieldResPageSize],
+    total: data?.[_fieldNames.total as string],
+    current: data ? Number(data[_fieldNames.current as string]) : undefined,
+    pageSize: data?.[_fieldNames.size as string],
     showQuickJumper: true,
     showSizeChanger: true,
     pageSizeOptions: PAGE_SIZE_OPTIONS,
     onChange: (page: number, pageSize: number) => {
-      setParams((old) => ({
+      setParams((old: TQueryParams) => ({
         ...old,
-        [fieldPage]: page,
-        [fieldPageSize]: pageSize,
+        [_fieldNames.page as string]: page,
+        [_fieldNames.pageSize as string]: pageSize,
       }));
     },
     ...defaultPaginationProps,
