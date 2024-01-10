@@ -14,7 +14,7 @@ export interface IHandleCodeParams {
   message?: string;
   headers?: Record<string, any>;
   modalProps?: ModalProps;
-  onErrorCallback?: () => {};
+  onErrorCallback?: () => void;
 }
 
 class HandleInterceptorCode {
