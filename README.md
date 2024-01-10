@@ -1,5 +1,7 @@
 # hbwow repo
 
+> https://fvn4msd7c9.feishu.cn/mindnotes/X5WxbYUYfmeaianNjEUcbQZsnge#mindmap
+
 ## 发包步骤
 
 1. `pnpm changeset` （生成临时的 changelog）
