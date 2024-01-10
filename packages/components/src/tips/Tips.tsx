@@ -7,7 +7,7 @@ import './tips.css';
 export interface ITipsProps {
   tips?: React.ReactNode;
   icon?: React.ReactNode;
-  defaultIconProps?: React.SVGProps<SVGSVGElement>;
+  defaultIconProps?: React.SVGProps<SVGElement>;
   buttonProps?: ButtonProps;
   tooltipProps?: TooltipProps;
 }
