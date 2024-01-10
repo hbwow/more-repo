@@ -10,7 +10,7 @@ export interface IUploadBtnProps extends ButtonProps {
   data?: Record<string, any>; // 额外的数据
   uploadProps?: UploadProps;
   buttonProps?: ButtonProps;
-  onSuccess?: () => void;
+  onSuccess?: (res?: any) => void;
 }
 
 const UploadBtn = ({
@@ -27,7 +27,7 @@ const UploadBtn = ({
 
   const mutateUpload = async (
     params: FormData,
-    options: { onSuccess: () => void; onError: () => void },
+    options: { onSuccess: (res: any) => void; onError: (error: any) => void },
   ) => {
     try {
       setIsLoading(true);
@@ -45,7 +45,7 @@ const UploadBtn = ({
       setIsLoading(false);
 
       if (res.status === 200) {
-        options?.onSuccess?.();
+        options?.onSuccess?.(res);
       } else {
         throw new Error('上传失败');
       }
@@ -53,7 +53,7 @@ const UploadBtn = ({
       return res;
     } catch (error) {
       setIsLoading(false);
-      options?.onError?.();
+      options?.onError?.(error);
     }
   };
 
@@ -66,9 +66,9 @@ const UploadBtn = ({
     });
 
     mutateUpload(formData, {
-      onSuccess: () => {
+      onSuccess: (res) => {
         message.success('导入成功！');
-        onSuccess?.();
+        onSuccess?.(res);
       },
       onError: () => {
         message.error('导入失败！');
