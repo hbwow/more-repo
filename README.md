@@ -1,6 +1,6 @@
 # hbwow repo
 
-> https://fvn4msd7c9.feishu.cn/mindnotes/X5WxbYUYfmeaianNjEUcbQZsnge#mindmap
+> https://fvn4msd7c9.feishu.cn/docx/Txx5d1fc1oR81dxdHEVcZ0WenSh?from=from_copylink
 
 ## 发包步骤
 
