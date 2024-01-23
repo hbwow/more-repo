@@ -2,12 +2,12 @@
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-08-30 17:40:09
  * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2023-10-17 11:31:43
+ * @LastEditTime: 2024-01-23 16:02:26
  * @FilePath: /more-repo/packages/utils/src/handleInterceptorCode/handleInterceptorCode.ts
  * @Description: 处理返回拦截code逻辑
  */
 
-import { Modal, ModalProps } from 'antd';
+import Modal, { ModalProps } from 'antd/lib/modal';
 
 export interface IHandleCodeParams {
   code: number;

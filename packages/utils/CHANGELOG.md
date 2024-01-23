@@ -1,5 +1,23 @@
 # @hbwow/utils
 
+## 2.2.3
+
+### Patch Changes
+
+- 撤销 2.2.1 2.2.2
+
+## 2.2.2
+
+### Patch Changes
+
+- fix-延迟渲染Modal
+
+## 2.2.1
+
+### Patch Changes
+
+- fix-test
+
 ## 2.2.0
 
 ### Minor Changes

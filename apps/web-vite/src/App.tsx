@@ -1,4 +1,4 @@
-// import { HandleInterceptorCode } from '@hbwow/utils';
+import { HandleInterceptorCode } from '@hbwow/utils';
 import { useState, useEffect, useRef } from 'react';
 
 import {
@@ -17,17 +17,17 @@ import {
 import demoPdf from './assets/pdf-open-parameters.pdf';
 import PdfViewer, { pdfViewerFn } from '@hbwow/pdf-viewer';
 
-// const handleInterceptorCode = new HandleInterceptorCode({
-//   ignoreCodes: [200],
-//   tokenExpiredCodes: [401],
-// });
+const handleInterceptorCode = new HandleInterceptorCode({
+  ignoreCodes: [200],
+  tokenExpiredCodes: [401],
+});
 
 function App() {
   const [blob, setBlob] = useState<Blob>();
   const refPdfViewer = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
-    // handleInterceptorCode.handleCode({ code: 401 });
+    handleInterceptorCode.handleCode({ code: 401 });
   }, []);
 
   useEffect(() => {
