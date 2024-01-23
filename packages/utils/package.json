@@ -1,6 +1,6 @@
 {
   "name": "@hbwow/utils",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "utils",
   "keywords": [
     "utils",
@@ -41,10 +41,9 @@
   "engines": {
     "node": ">= 16.14.0"
   },
-  "dependencies": {
-    "antd": "5.x"
-  },
+  "dependencies": {},
   "peerDependencies": {
+    "antd": "^5.11.2",
     "react": ">=16.9.0",
     "react-dom": ">=16.9.0"
   }

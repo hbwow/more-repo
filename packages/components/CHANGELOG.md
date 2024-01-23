@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.13.0
+
+### Minor Changes
+
+- antd放入peerDependencies
+
 ## 2.12.0
 
 ### Minor Changes

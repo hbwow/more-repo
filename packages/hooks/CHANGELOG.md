@@ -1,5 +1,11 @@
 # @hbwow/hooks
 
+## 2.5.0
+
+### Minor Changes
+
+- antd放入peerDependencies
+
 ## 2.4.0
 
 ### Minor Changes

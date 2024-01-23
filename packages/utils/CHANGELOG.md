@@ -1,5 +1,11 @@
 # @hbwow/utils
 
+## 2.2.0
+
+### Minor Changes
+
+- antd放入peerDependencies
+
 ## 2.1.0
 
 ### Minor Changes
