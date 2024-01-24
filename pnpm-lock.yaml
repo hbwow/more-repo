@@ -414,6 +414,9 @@ importers:
       '@hbwow/tsconfig':
         specifier: workspace:^
         version: link:../tsconfig
+      '@types/react':
+        specifier: ^18.2.21
+        version: 18.2.21
       babel-plugin-import:
         specifier: ^1.13.8
         version: 1.13.8

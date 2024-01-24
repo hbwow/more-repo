@@ -2,18 +2,21 @@
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-08-30 17:40:09
  * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2024-01-23 16:02:26
+ * @LastEditTime: 2024-01-24 16:20:18
  * @FilePath: /more-repo/packages/utils/src/handleInterceptorCode/handleInterceptorCode.ts
  * @Description: 处理返回拦截code逻辑
  */
 
-import Modal, { ModalProps } from 'antd/lib/modal';
+import { ModalFuncProps } from 'antd/lib/modal';
+import { events } from '../utils/eventEmit';
+
+export const EVENTS_NAME = '@hbwow/utils/handleInterceptorCode';
 
 export interface IHandleCodeParams {
   code: number;
   message?: string;
   headers?: Record<string, any>;
-  modalProps?: ModalProps;
+  modalProps?: ModalFuncProps;
   onErrorCallback?: () => void;
 }
 
@@ -53,12 +56,13 @@ class HandleInterceptorCode {
     const _message = message || '未知错误';
 
     if (this.tokenExpiredCodes.includes(code)) {
-      Modal.error({
+      events.emit(EVENTS_NAME, {
+        modalMethod: 'error',
+        modalDestroyAll: true,
         ...this.commonModalConfig,
         content: '登录已过期',
         okText: '去登录',
         onOk: () => {
-          Modal.destroyAll();
           if (window) {
             window.location.href = '/login';
           }
@@ -66,16 +70,35 @@ class HandleInterceptorCode {
         ...modalProps,
       });
 
+      // Modal.error({
+      //   ...this.commonModalConfig,
+      //   content: '登录已过期',
+      //   okText: '去登录',
+      //   onOk: () => {
+      //     Modal.destroyAll();
+      //     if (window) {
+      //       window.location.href = '/login';
+      //     }
+      //   },
+      //   ...modalProps,
+      // });
+
       onErrorCallback?.();
       return false;
     }
 
     if (!this.ignoreCodes.includes(code)) {
-      Modal.warning({
+      events.emit(EVENTS_NAME, {
         ...this.commonModalConfig,
         content: _message,
         ...modalProps,
       });
+
+      // Modal.warning({
+      //   ...this.commonModalConfig,
+      //   content: _message,
+      //   ...modalProps,
+      // });
 
       onErrorCallback?.();
       return false;

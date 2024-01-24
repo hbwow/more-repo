@@ -2,7 +2,20 @@
 
 > 处理拦截器返回的错误码
 
+> ！！！必须搭配 <HandleInterceptorCodeCom /> 组件使用！！！
+>
+> 因为直接静态方法使用Modal会导致拿不到context上下文，所以写个组件搭配使用！
+
 ## 用法
+
+找个顶部组件注册 HandleInterceptorCodeCom
+
+```ts
+<React.StrictMode>
+  <HandleInterceptorCodeCom />
+  <App />
+</React.StrictMode>
+```
 
 ```ts
 import { HandleInterceptorCode } from '@hbwow/utils';

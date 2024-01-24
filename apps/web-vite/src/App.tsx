@@ -1,4 +1,4 @@
-import { HandleInterceptorCode } from '@hbwow/utils';
+import { HandleInterceptorCode, HandleInterceptorCodeCom } from '@hbwow/utils';
 import { useState, useEffect, useRef } from 'react';
 
 import {
@@ -7,7 +7,7 @@ import {
   Tips,
   OpenNewTabOrWindowBtn,
   UploadBtn,
-  ModalBtn
+  ModalBtn,
 } from '@hbwow/components';
 // import { useDownload, handleDownload } from '@hbwow/hooks';
 
@@ -17,6 +17,7 @@ import {
 
 import demoPdf from './assets/pdf-open-parameters.pdf';
 import PdfViewer, { pdfViewerFn } from '@hbwow/pdf-viewer';
+import { Button, Divider } from 'antd';
 
 const handleInterceptorCode = new HandleInterceptorCode({
   ignoreCodes: [200],
@@ -27,9 +28,9 @@ function App() {
   const [blob, setBlob] = useState<Blob>();
   const refPdfViewer = useRef<HTMLIFrameElement>(null);
 
-  useEffect(() => {
-    // handleInterceptorCode.handleCode({ code: 401 });
-  }, []);
+  const handleErrorCode = (code = 401) => {
+    handleInterceptorCode.handleCode({ code });
+  };
 
   useEffect(() => {
     function pdfToBlob(pdfUrl) {
@@ -48,9 +49,10 @@ function App() {
     <>
       <div style={{ position: 'relative', width: '600px', height: '400px' }}>
         <FullBgImage />
-        <div>2132132</div>
+        <div style={{ color: 'white' }}>2132132</div>
       </div>
 
+      <Divider />
       <LeftRightBtns
         leftBtns={[
           { children: '复制创建订单' },
@@ -63,6 +65,7 @@ function App() {
         ]}
       />
 
+      <Divider />
       <PdfViewer blob={blob} ref={refPdfViewer} />
 
       <button
@@ -74,12 +77,15 @@ function App() {
         print
       </button>
 
+      <Divider />
       <Tips tips='提示' />
 
+      <Divider />
       <OpenNewTabOrWindowBtn href='https://baidu.com' newWindow>
         jump
       </OpenNewTabOrWindowBtn>
 
+      <Divider />
       <UploadBtn
         action='http://airport-freight-dev.psc.sw/afas/ticket/air/freight/importAll'
         token='Bearer 0e2e652b-9d25-485f-948c-5fdf74625269'
@@ -87,7 +93,27 @@ function App() {
         上传
       </UploadBtn>
 
+      <Divider />
       <ModalBtn>modalBtn</ModalBtn>
+
+      <Divider />
+      <div>
+        <Button
+          onClick={() => {
+            handleErrorCode();
+          }}
+        >
+          handleInterceptorCode
+        </Button>
+        <Button
+          onClick={() => {
+            handleErrorCode(502);
+          }}
+        >
+          handleInterceptorCode
+        </Button>
+        <HandleInterceptorCodeCom />
+      </div>
     </>
   );
 }

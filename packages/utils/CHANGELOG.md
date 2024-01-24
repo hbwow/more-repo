@@ -1,5 +1,11 @@
 # @hbwow/utils
 
+## 2.3.0
+
+### Minor Changes
+
+- 必须搭配 <HandleInterceptorCodeCom /> 组件使用,因为直接静态方法使用Modal会导致拿不到context上下文，所以写个组件搭配使用！
+
 ## 2.2.3
 
 ### Patch Changes

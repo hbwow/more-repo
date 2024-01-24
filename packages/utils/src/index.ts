@@ -1,5 +1,8 @@
-import HandleInterceptorCode, { IHandleCodeParams } from './handleInterceptorCode';
+import HandleInterceptorCode, {
+  IHandleCodeParams,
+  HandleInterceptorCodeCom,
+} from './handleInterceptorCode';
 import * as md from './md';
 
-export { HandleInterceptorCode, md };
+export { HandleInterceptorCode, HandleInterceptorCodeCom, md };
 export type { IHandleCodeParams };
