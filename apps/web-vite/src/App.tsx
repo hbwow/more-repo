@@ -7,6 +7,7 @@ import {
   Tips,
   OpenNewTabOrWindowBtn,
   UploadBtn,
+  ModalBtn
 } from '@hbwow/components';
 // import { useDownload, handleDownload } from '@hbwow/hooks';
 
@@ -27,7 +28,7 @@ function App() {
   const refPdfViewer = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
-    handleInterceptorCode.handleCode({ code: 401 });
+    // handleInterceptorCode.handleCode({ code: 401 });
   }, []);
 
   useEffect(() => {
@@ -85,6 +86,8 @@ function App() {
       >
         上传
       </UploadBtn>
+
+      <ModalBtn>modalBtn</ModalBtn>
     </>
   );
 }

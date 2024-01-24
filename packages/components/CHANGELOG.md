@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.13.1
+
+### Patch Changes
+
+- Modal更换为 Modal.useModal()
+
 ## 2.13.0
 
 ### Minor Changes
