@@ -2,7 +2,7 @@
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-08-30 17:40:09
  * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2024-01-24 16:20:18
+ * @LastEditTime: 2024-01-26 14:49:43
  * @FilePath: /more-repo/packages/utils/src/handleInterceptorCode/handleInterceptorCode.ts
  * @Description: 处理返回拦截code逻辑
  */
@@ -17,6 +17,7 @@ export interface IHandleCodeParams {
   message?: string;
   headers?: Record<string, any>;
   modalProps?: ModalFuncProps;
+  modalPropsForTokenExpired?: ModalFuncProps;
   onErrorCallback?: () => void;
 }
 
@@ -47,6 +48,7 @@ class HandleInterceptorCode {
     message,
     headers = {},
     modalProps = {},
+    modalPropsForTokenExpired = {},
     onErrorCallback,
   }: IHandleCodeParams): boolean {
     if (headers['No-Notify-Message'] === 'Y') {
@@ -67,7 +69,7 @@ class HandleInterceptorCode {
             window.location.href = '/login';
           }
         },
-        ...modalProps,
+        ...modalPropsForTokenExpired,
       });
 
       // Modal.error({
@@ -80,7 +82,7 @@ class HandleInterceptorCode {
       //       window.location.href = '/login';
       //     }
       //   },
-      //   ...modalProps,
+      //   ...modalPropsForTokenExpired,
       // });
 
       onErrorCallback?.();

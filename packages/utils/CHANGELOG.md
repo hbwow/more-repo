@@ -1,5 +1,11 @@
 # @hbwow/utils
 
+## 2.4.0
+
+### Minor Changes
+
+- handleCode传递的modalProps逻辑分开
+
 ## 2.3.0
 
 ### Minor Changes
