@@ -50,8 +50,10 @@ useEffect(() => {
   function pdfToBlob(pdfUrl) {
     return fetch(pdfUrl)
       .then((response) => response.blob())
-      .then((blob) => {
-        pdfViewerFn(blob);
+      .then((blobRes) => {
+        // const blob = new Blob([blobRes], { type: 'application/pdf' }); // ！！！有些场景需要再次转换下 然后传递
+
+        pdfViewerFn(blobRes);
       });
   }
 
