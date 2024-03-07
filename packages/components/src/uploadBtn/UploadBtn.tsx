@@ -10,7 +10,12 @@ export interface IUploadBtnProps extends ButtonProps {
   data?: Record<string, any>; // 额外的数据
   uploadProps?: UploadProps;
   buttonProps?: ButtonProps;
+
+  showSuccessMessage?: boolean; // 是否展示成功消息
+  showErrorMessage?: boolean; // 是否展示错误消息
+
   onSuccess?: (res?: any) => void;
+  onError?: (res?: any) => void;
 }
 
 const UploadBtn = ({
@@ -19,7 +24,12 @@ const UploadBtn = ({
   token = '',
   headers = {},
   data = {},
+
+  showSuccessMessage = true,
+  showErrorMessage = true,
+
   onSuccess,
+  onError,
   uploadProps = {},
   ...rest
 }: IUploadBtnProps) => {
@@ -27,7 +37,7 @@ const UploadBtn = ({
 
   const mutateUpload = async (
     params: FormData,
-    options: { onSuccess: (res: any) => void; onError: (error: any) => void },
+    options: { _onSuccess: (res: any) => void; _onError: (error: any) => void },
   ) => {
     try {
       setIsLoading(true);
@@ -41,19 +51,20 @@ const UploadBtn = ({
           ...headers,
         },
       });
+      const data = await res.json();
 
       setIsLoading(false);
 
       if (res.status === 200) {
-        options?.onSuccess?.(res);
+        options?._onSuccess?.(data);
       } else {
-        throw new Error('上传失败');
+        throw data;
       }
 
-      return res;
+      return data;
     } catch (error) {
       setIsLoading(false);
-      options?.onError?.(error);
+      options?._onError?.(error);
     }
   };
 
@@ -66,12 +77,15 @@ const UploadBtn = ({
     });
 
     mutateUpload(formData, {
-      onSuccess: (res) => {
-        message.success('导入成功！');
+      _onSuccess: (res) => {
+        // console.log('🚀🚀🚀 ~ res:', res);
+        showSuccessMessage && message.success('导入成功！');
         onSuccess?.(res);
       },
-      onError: () => {
-        message.error('导入失败！');
+      _onError: (error) => {
+        // console.log('🚀🚀🚀 ~ error:', error);
+        showErrorMessage && message.error('导入失败！');
+        onError?.(error);
       },
     });
   };

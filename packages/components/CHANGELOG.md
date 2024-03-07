@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.14.0
+
+### Minor Changes
+
+- UploadBtn 增加错误回调，增加手动控制默认message提示
+
 ## 2.13.1
 
 ### Patch Changes

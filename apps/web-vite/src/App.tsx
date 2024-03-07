@@ -87,8 +87,11 @@ function App() {
 
       <Divider />
       <UploadBtn
-        action='http://airport-freight-dev.psc.sw/afas/ticket/air/freight/importAll'
-        token='Bearer 0e2e652b-9d25-485f-948c-5fdf74625269'
+        action='/afas/ticket/air/freight/importAll'
+        token='Bearer 3161f161-4c1b-4aa1-9756-b27346933ef2'
+        data={{
+          ticketType: 1,
+        }}
       >
         上传
       </UploadBtn>
