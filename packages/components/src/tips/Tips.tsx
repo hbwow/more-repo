@@ -6,7 +6,7 @@ import './tips.css';
 
 export interface ITipsProps {
   tips?: React.ReactNode;
-  icon?: React.ReactNode;
+  icon?: React.ReactNode | false;
   defaultIconProps?: React.SVGProps<SVGElement>;
   buttonProps?: ButtonProps;
   tooltipProps?: TooltipProps;
@@ -40,9 +40,11 @@ const Tips = ({
 
   return (
     <Tooltip title={tips} {...tooltipProps}>
-      <Button type='text' className={cx('tips-btn', classNameButton)} {...restButton}>
-        {icon ? icon : <RiInformationLine {...defaultIconProps} />}
-      </Button>
+      {icon !== false && (
+        <Button type='text' className={cx('tips-btn', classNameButton)} {...restButton}>
+          {icon ? icon : <RiInformationLine {...defaultIconProps} />}
+        </Button>
+      )}
     </Tooltip>
   );
 };
