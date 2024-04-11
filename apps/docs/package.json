@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "dev": "npm run move && next",
+    "build": "npm run move && next build",
+    "start": "next start",
+    "move": "zx ./move-readme.mjs"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +18,8 @@
     "nextra-theme-docs": "^2.13.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "zx": "^8.0.1"
   }
 }
