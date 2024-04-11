@@ -1,0 +1,15 @@
+{
+  "index": {
+    "title": "首页",
+    "type": "page",
+    "display": "hidden"
+  },
+  "components": {
+    "title": "组件",
+    "type": "page"
+  },
+  "projects": {
+    "title": "项目",
+    "type": "page"
+  }
+}
