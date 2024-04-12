@@ -28,6 +28,10 @@
     "title": "Router Animation",
     "type": "page"
   },
+  "utils": {
+    "title": "Utils",
+    "type": "page"
+  },
   "projects": {
     "title": "项目",
     "type": "page"

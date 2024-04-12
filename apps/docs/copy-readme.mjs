@@ -88,3 +88,9 @@ await copyFilesInDirectory(
   join(__dirname, '../../packages/router-animation'),
   join(__dirname, `/${FOLDER_NAME}/router-animation`),
 );
+
+console.log(chalk.yellow('------- 复制 utils 的 README.md -------'));
+await copyFilesInDirectory(
+  join(__dirname, '../../packages/utils/src'),
+  join(__dirname, `/${FOLDER_NAME}/utils`),
+);

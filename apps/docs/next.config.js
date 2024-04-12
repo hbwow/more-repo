@@ -42,6 +42,11 @@ module.exports = withNextra({
         statusCode: 301,
       },
       {
+        source: '/utils',
+        destination: '/utils/index',
+        statusCode: 301,
+      },
+      {
         source: '/projects',
         destination: '/projects/index',
         statusCode: 301,
