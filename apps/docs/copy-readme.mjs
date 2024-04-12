@@ -94,3 +94,9 @@ await copyFilesInDirectory(
   join(__dirname, '../../packages/utils/src'),
   join(__dirname, `/${FOLDER_NAME}/utils`),
 );
+
+console.log(chalk.yellow('------- 复制 validate-antd 的 README.md -------'));
+await copyFilesInDirectory(
+  join(__dirname, '../../packages/validate-antd'),
+  join(__dirname, `/${FOLDER_NAME}/validate-antd`),
+);

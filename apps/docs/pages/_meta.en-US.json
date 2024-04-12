@@ -32,6 +32,10 @@
     "title": "Utils",
     "type": "page"
   },
+  "validate-antd": {
+    "title": "Validate Antd",
+    "type": "page"
+  },
   "projects": {
     "title": "Projects",
     "type": "page"

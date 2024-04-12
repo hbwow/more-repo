@@ -47,6 +47,11 @@ module.exports = withNextra({
         statusCode: 301,
       },
       {
+        source: '/validate-antd',
+        destination: '/validate-antd/index',
+        statusCode: 301,
+      },
+      {
         source: '/projects',
         destination: '/projects/index',
         statusCode: 301,
