@@ -62,20 +62,23 @@ await copyFilesInDirectory(
 console.log(chalk.yellow('------- 复制 Hooks 的 README.md -------'));
 await copyFilesInDirectory(
   join(__dirname, '../../packages/hooks/src'),
-  // join(__dirname, `/apps/docs/${FOLDER_NAME}/hooks`),
   join(__dirname, `/${FOLDER_NAME}/hooks`),
 );
 
 console.log(chalk.yellow('------- 复制 Cli 的 README.md -------'));
 await copyFilesInDirectory(
   join(__dirname, '../../packages/cli'),
-  // join(__dirname, `/apps/docs/${FOLDER_NAME}/hooks`),
   join(__dirname, `/${FOLDER_NAME}/cli`),
 );
 
 console.log(chalk.yellow('------- 复制 Lints 的 README.md -------'));
 await copyFilesInDirectory(
   join(__dirname, '../../packages/lints'),
-  // join(__dirname, `/apps/docs/${FOLDER_NAME}/hooks`),
   join(__dirname, `/${FOLDER_NAME}/lints`),
+);
+
+console.log(chalk.yellow('------- 复制 pdf-viewer 的 README.md -------'));
+await copyFilesInDirectory(
+  join(__dirname, '../../packages/pdf-viewer'),
+  join(__dirname, `/${FOLDER_NAME}/pdf-viewer`),
 );

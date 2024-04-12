@@ -32,6 +32,11 @@ module.exports = withNextra({
         statusCode: 301,
       },
       {
+        source: '/pdf-viewer',
+        destination: '/pdf-viewer/index',
+        statusCode: 301,
+      },
+      {
         source: '/projects',
         destination: '/projects/index',
         statusCode: 301,

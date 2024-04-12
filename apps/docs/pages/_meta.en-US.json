@@ -20,6 +20,10 @@
     "title": "Lints",
     "type": "page"
   },
+  "pdf-viewer": {
+    "title": "Pdf Viewer",
+    "type": "page"
+  },
   "projects": {
     "title": "Projects",
     "type": "page"
