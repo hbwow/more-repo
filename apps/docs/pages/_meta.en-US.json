@@ -12,6 +12,10 @@
     "title": "Hooks",
     "type": "page"
   },
+  "cli": {
+    "title": "Cli",
+    "type": "page"
+  },
   "projects": {
     "title": "Projects",
     "type": "page"

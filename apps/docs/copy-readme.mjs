@@ -1,6 +1,6 @@
 #!/usr/bin/env zx
 
-import { readdir, stat, mkdir, cp } from 'fs/promises';
+import { readdir, stat, mkdir, rm, cp } from 'fs/promises';
 import { join } from 'path';
 
 const FOLDER_NAME = 'COPY_README';
@@ -20,29 +20,37 @@ async function copyFilesInDirectory(sourceDir, destinationDir) {
       const itemPath = join(sourceDir, item);
       const itemStat = await stat(itemPath);
 
-      // 是否是文件夹
-      if (itemStat.isDirectory()) {
-        const readmePath = join(itemPath, 'README.md');
+      //外层有 README.md 文件，直接复制
+      if (item === 'README.md') {
+        cp(itemPath, join(destinationDir, 'README.md'));
 
+        console.log(chalk.green(`Copied Successfully: <${item}>`));
+      }
+
+      // readme 文件路径
+      const readmePath = join(itemPath, 'README.md');
+      const isReadmeFile = await stat(readmePath).catch(() => false);
+
+      // 是否是文件夹
+      if (itemStat.isDirectory() && isReadmeFile) {
+        // 复制 README.md 文件到目标子目录
         const subDir = join(destinationDir, item);
 
         // 创建目标子目录（如果不存在）
         await mkdir(subDir, { recursive: true });
 
-        // 复制 README.md 文件到目标子目录
-        if (await stat(readmePath).catch(() => false)) {
-          await cp(readmePath, join(subDir, 'README.md'));
-        }
+        await cp(readmePath, join(subDir, 'README.md'));
 
         console.log(chalk.green(`Copied Successfully: <${item}>`));
       }
-
-      //
     }
   } catch (error) {
     console.error(`Error copying files: ${error}`);
   }
 }
+
+console.log(chalk.red(`------- 删除 ${FOLDER_NAME} 文件夹 -------`));
+await rm(join(__dirname, `/${FOLDER_NAME}`), { force: true, recursive: true });
 
 console.log(chalk.yellow('------- 复制 Components 的 README.md -------'));
 await copyFilesInDirectory(
@@ -56,4 +64,11 @@ await copyFilesInDirectory(
   join(__dirname, '../../packages/hooks/src'),
   // join(__dirname, `/apps/docs/${FOLDER_NAME}/hooks`),
   join(__dirname, `/${FOLDER_NAME}/hooks`),
+);
+
+console.log(chalk.yellow('------- 复制 Cli 的 README.md -------'));
+await copyFilesInDirectory(
+  join(__dirname, '../../packages/cli'),
+  // join(__dirname, `/apps/docs/${FOLDER_NAME}/hooks`),
+  join(__dirname, `/${FOLDER_NAME}/cli`),
 );
