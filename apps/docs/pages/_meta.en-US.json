@@ -24,6 +24,10 @@
     "title": "Pdf Viewer",
     "type": "page"
   },
+  "router-animation": {
+    "title": "Router Animation",
+    "type": "page"
+  },
   "projects": {
     "title": "Projects",
     "type": "page"

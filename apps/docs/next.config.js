@@ -37,6 +37,11 @@ module.exports = withNextra({
         statusCode: 301,
       },
       {
+        source: '/router-animation',
+        destination: '/router-animation/index',
+        statusCode: 301,
+      },
+      {
         source: '/projects',
         destination: '/projects/index',
         statusCode: 301,
