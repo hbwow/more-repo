@@ -87,6 +87,7 @@ const handleSearch = async () => {
 | tableProps | 表格 props | TableProps<any> |  |  |
 | paginationProps | 分页 props | PaginationProps |  |  |
 | defaultSearchFormValues | 默认的搜索表单数据 | TFormValue |  |  |
+| queryParams | 查询的参数 | TQueryParams |  |  |
 | onChangeSearchFormValues | 更改搜索表单数据 | (next: TFormValue) => void |  |  |
 | onreset | 重置 | () => void |  |  |
 |  |  |  |  |  |

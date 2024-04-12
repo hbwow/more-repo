@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run move && next",
-    "build": "npm run move && next build",
+    "dev": "npm run copy && next",
+    "build": "npm run copy && next build",
     "start": "next start",
-    "move": "zx ./move-readme.mjs"
+    "copy": "zx ./copy-readme.mjs"
   },
   "keywords": [],
   "author": "",

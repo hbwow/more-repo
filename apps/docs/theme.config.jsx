@@ -2,7 +2,7 @@ export default {
   logo: <span>Docs</span>,
 
   project: {
-    link: 'https://github.com/shuding/nextra',
+    link: 'https://github.com/hbwow/more-repo/tree/master/apps/docs',
   },
 
   i18n: [

@@ -3,7 +3,7 @@
 import { readdir, stat, mkdir, cp } from 'fs/promises';
 import { join } from 'path';
 
-const FOLDER_NAME = 'MOVE_README';
+const FOLDER_NAME = 'COPY_README';
 
 // console.log('🚀🚀🚀 ~ 当前目录:', __dirname);
 
@@ -55,5 +55,5 @@ console.log(chalk.yellow('------- 复制 Hooks 的 README.md -------'));
 await copyFilesInDirectory(
   join(__dirname, '../../packages/hooks/src'),
   // join(__dirname, `/apps/docs/${FOLDER_NAME}/hooks`),
-  join(__dirname, `/${FOLDER_NAME}/components`),
+  join(__dirname, `/${FOLDER_NAME}/hooks`),
 );

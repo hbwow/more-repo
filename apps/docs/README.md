@@ -1,5 +1,9 @@
 # `Docs`
 
+## 开发指南
+
+- COPY_README 为脚本复制的 package 里面的 readme.md
+
 ## 参考
 
 > https://nextra.site/
