@@ -8,6 +8,10 @@
     "title": "Components",
     "type": "page"
   },
+  "hooks": {
+    "title": "Hooks",
+    "type": "page"
+  },
   "projects": {
     "title": "Projects",
     "type": "page"

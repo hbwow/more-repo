@@ -8,6 +8,10 @@
     "title": "组件",
     "type": "page"
   },
+  "hooks": {
+    "title": "Hooks",
+    "type": "page"
+  },
   "projects": {
     "title": "项目",
     "type": "page"
