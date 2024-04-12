@@ -16,6 +16,10 @@
     "title": "Cli",
     "type": "page"
   },
+  "lints": {
+    "title": "Lints",
+    "type": "page"
+  },
   "projects": {
     "title": "项目",
     "type": "page"

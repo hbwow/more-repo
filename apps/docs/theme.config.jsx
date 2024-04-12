@@ -10,6 +10,12 @@ export default {
     { locale: 'zh-CN', text: '中文' },
   ],
 
+  useNextSeoProps() {
+    return {
+      titleTemplate: "%s – Docs",
+    };
+  },
+
   footer: {
     text: (
       <span>

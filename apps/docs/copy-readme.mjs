@@ -72,3 +72,10 @@ await copyFilesInDirectory(
   // join(__dirname, `/apps/docs/${FOLDER_NAME}/hooks`),
   join(__dirname, `/${FOLDER_NAME}/cli`),
 );
+
+console.log(chalk.yellow('------- 复制 Lints 的 README.md -------'));
+await copyFilesInDirectory(
+  join(__dirname, '../../packages/lints'),
+  // join(__dirname, `/apps/docs/${FOLDER_NAME}/hooks`),
+  join(__dirname, `/${FOLDER_NAME}/lints`),
+);
