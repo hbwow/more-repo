@@ -47,12 +47,14 @@ interface IUseSearchAndTable<TQueryParams, TData, TError, TFormValue, TPaginatio
   formatParams?: (formValues: TFormValue) => TFormValue; // 表单数据 与 请求体不同的时候 调用该方法格式化
 }
 
-interface IUseSearchAndTableReturn<TData, TError, TFormValue> {
+interface IUseSearchAndTableReturn<TData, TError, TFormValue, TQueryParams> {
   queryReturn: UseQueryResult<TData, TError>; // react query 所有的返回
   tableProps: Record<string, any>; // 表格 props
   // tableProps: TableProps<RecordType>; // 表格 props
   paginationProps: PaginationProps; // 分页 props
   defaultSearchFormValues: TFormValue; // 默认的搜索表单数据
+  queryParams?: TQueryParams;
+
   onChangeSearchFormValues: (next: TFormValue) => void; // 更改搜索表单数据
   onreset: () => void; // 重置
 }
@@ -80,7 +82,7 @@ const useSearchAndTable = <
   TError,
   TFormValue,
   TPagination
->): IUseSearchAndTableReturn<TData, TError, TFormValue> => {
+>): IUseSearchAndTableReturn<TData, TError, TFormValue, TQueryParams> => {
   const globalState = useStore((state) => state.globalState);
   const setGlobalState = useStore((state) => state.setGlobalState);
 
@@ -168,6 +170,7 @@ const useSearchAndTable = <
     tableProps,
     paginationProps,
     defaultSearchFormValues: defaultIncludeGlobalParams,
+    queryParams: curParams,
     onChangeSearchFormValues,
     onreset,
   };
