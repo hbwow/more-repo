@@ -1,5 +1,11 @@
 # @hbwow/hooks
 
+## 2.6.0
+
+### Minor Changes
+
+- useSearchAndTable增加queryParams参数返回
+
 ## 2.5.0
 
 ### Minor Changes
