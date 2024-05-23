@@ -2,7 +2,7 @@
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-09-04 11:06:44
  * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2024-05-23 10:27:07
+ * @LastEditTime: 2024-05-23 10:41:43
  * @FilePath: /more-repo/packages/validate-antd/src/getRules.ts
  * @Description: 统一 antd 校验规则
  */
@@ -26,6 +26,7 @@ const useGetRules = () => {
    *  name: string; 规则名
    *  required?: boolean; 是否为必选字段
    *  optional?: boolean; 是否选填
+   *  errorMsg?: string; 用来替换默认报错信息
    * }
    * @return {*}
    */
