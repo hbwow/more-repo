@@ -1,5 +1,12 @@
 # web-vite
 
+## 0.0.52
+
+### Patch Changes
+
+- Updated dependencies
+  - @hbwow/validate-antd@1.1.0
+
 ## 0.0.51
 
 ### Patch Changes

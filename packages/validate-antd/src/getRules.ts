@@ -2,7 +2,7 @@
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-09-04 11:06:44
  * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2023-09-05 11:21:22
+ * @LastEditTime: 2024-05-23 10:27:07
  * @FilePath: /more-repo/packages/validate-antd/src/getRules.ts
  * @Description: 统一 antd 校验规则
  */
@@ -33,11 +33,13 @@ const useGetRules = () => {
     name,
     required = true,
     optional = false,
+    errorMsg = '',
     extraData,
   }: {
     name: string;
     required?: boolean;
     optional?: boolean;
+    errorMsg?: string;
     extraData?: any;
   }) => {
     const obj: IGetRulesObj = {};
@@ -50,7 +52,10 @@ const useGetRules = () => {
             if (!value && optional) return Promise.resolve(); // 选填
 
             const msg = rulesMap[key](value);
-            return formValidate(msg);
+
+            if (!msg || msg === '') return Promise.resolve(); // 校验通过
+
+            return formValidate(errorMsg || msg);
           },
         }),
       ];

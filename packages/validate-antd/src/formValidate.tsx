@@ -18,8 +18,7 @@ const FormError = ({ message }: IProps) => {
   );
 };
 
-const formValidate = (msg: string | void) => {
-  if (!msg || msg === '') return Promise.resolve();
+const formValidate = (msg: string) => {
   return Promise.reject(<FormError message={msg} />);
 };
 

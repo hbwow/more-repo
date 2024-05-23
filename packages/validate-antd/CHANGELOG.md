@@ -1,5 +1,11 @@
 # @hbwow/validate-antd
 
+## 1.1.0
+
+### Minor Changes
+
+- 新增 errorMsg 字段用来替换默认报错信息
+
 ## 1.0.0
 
 ### Major Changes
