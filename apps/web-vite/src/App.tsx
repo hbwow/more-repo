@@ -8,6 +8,7 @@ import {
   OpenNewTabOrWindowBtn,
   UploadBtn,
   ModalBtn,
+  RequiredIcon,
 } from '@hbwow/components';
 // import { useDownload, handleDownload } from '@hbwow/hooks';
 
@@ -52,6 +53,7 @@ function App() {
         <div style={{ color: 'white' }}>2132132</div>
       </div>
 
+      {/* -------------- */}
       <Divider />
       <LeftRightBtns
         leftBtns={[
@@ -65,6 +67,7 @@ function App() {
         ]}
       />
 
+      {/* -------------- */}
       <Divider />
       <PdfViewer blob={blob} ref={refPdfViewer} />
 
@@ -77,14 +80,17 @@ function App() {
         print
       </button>
 
+      {/* -------------- */}
       <Divider />
       <Tips tips='提示' />
 
+      {/* -------------- */}
       <Divider />
       <OpenNewTabOrWindowBtn href='https://baidu.com' newWindow>
         jump
       </OpenNewTabOrWindowBtn>
 
+      {/* -------------- */}
       <Divider />
       <UploadBtn
         action='/afas/ticket/air/freight/importAll'
@@ -96,9 +102,11 @@ function App() {
         上传
       </UploadBtn>
 
+      {/* -------------- */}
       <Divider />
       <ModalBtn>modalBtn</ModalBtn>
 
+      {/* -------------- */}
       <Divider />
       <div>
         <Button
@@ -116,6 +124,13 @@ function App() {
           handleInterceptorCode
         </Button>
         <HandleInterceptorCodeCom />
+
+        {/* -------------- */}
+        <Divider />
+        <div>
+          <RequiredIcon />
+          <span>必填</span>
+        </div>
       </div>
     </>
   );

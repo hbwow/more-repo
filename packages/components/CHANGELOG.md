@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.15.0
+
+### Minor Changes
+
+- 新增 RequiredIcon 组件
+
 ## 2.14.1
 
 ### Patch Changes

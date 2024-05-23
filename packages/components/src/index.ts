@@ -28,3 +28,6 @@ export { handleOpenNewTabOrWindowBtn } from './openNewTabOrWindowBtn';
 
 export { default as UploadBtn } from './uploadBtn';
 export type { IUploadBtnProps } from './uploadBtn';
+
+export { default as RequiredIcon } from './requiredIcon';
+export type { IRequiredIconProps } from './requiredIcon';
