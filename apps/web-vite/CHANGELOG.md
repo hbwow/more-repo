@@ -1,5 +1,12 @@
 # web-vite
 
+## 0.0.53
+
+### Patch Changes
+
+- Updated dependencies
+  - @hbwow/components@2.16.0
+
 ## 0.0.52
 
 ### Patch Changes

@@ -9,6 +9,7 @@ import {
   UploadBtn,
   ModalBtn,
   RequiredIcon,
+  PartiallyTruncate,
 } from '@hbwow/components';
 // import { useDownload, handleDownload } from '@hbwow/hooks';
 
@@ -131,6 +132,15 @@ function App() {
           <RequiredIcon />
           <span>必填</span>
         </div>
+
+        {/* -------------- */}
+        <Divider />
+        <PartiallyTruncate>
+          <PartiallyTruncate.T>
+            这本书是李娟的代表作，通过散文的形式记录了她在阿勒泰生活的点滴。书中细腻的描写和深情的叙述展现了阿勒泰的自然美景和生活在那里的人的质朴和坚韧，是了解新疆自然风光和人文风情的绝佳选择。
+          </PartiallyTruncate.T>
+          <PartiallyTruncate.Div>--《我的阿勒泰》</PartiallyTruncate.Div>
+        </PartiallyTruncate>
       </div>
     </>
   );

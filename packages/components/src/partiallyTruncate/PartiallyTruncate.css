@@ -1,0 +1,16 @@
+.hbwow-partially-truncate {
+  display: flex;
+  align-items: center;
+}
+
+.hbwow-partially-truncate-t {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration-line: underline;
+  text-underline-offset: 2px;
+}
+
+.hbwow-partially-truncate-div {
+  flex-shrink: 0;
+}

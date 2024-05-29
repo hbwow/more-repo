@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.16.0
+
+### Minor Changes
+
+- 新增 部分省略 组件
+
 ## 2.15.0
 
 ### Minor Changes

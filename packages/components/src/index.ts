@@ -31,3 +31,6 @@ export type { IUploadBtnProps } from './uploadBtn';
 
 export { default as RequiredIcon } from './requiredIcon';
 export type { IRequiredIconProps } from './requiredIcon';
+
+export { default as PartiallyTruncate } from './partiallyTruncate';
+export type { IPartiallyTruncateProps } from './partiallyTruncate';
