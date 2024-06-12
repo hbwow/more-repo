@@ -1,5 +1,11 @@
 # @hbwow/hooks
 
+## 2.7.0
+
+### Minor Changes
+
+- 添加分割文件名字段
+
 ## 2.6.0
 
 ### Minor Changes

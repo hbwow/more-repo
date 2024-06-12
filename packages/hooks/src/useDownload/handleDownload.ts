@@ -3,6 +3,7 @@ const handleDownload = async ({
   reqUrl,
   token = '',
   name = '',
+  splitFileNameField = 'filename=',
   method = 'GET',
   headers = {},
   data,
@@ -10,6 +11,7 @@ const handleDownload = async ({
   reqUrl: string;
   token?: string;
   name?: string;
+  splitFileNameField?: string;
   method?: string;
   headers?: Record<string, any>;
   data?: any;
@@ -30,7 +32,7 @@ const handleDownload = async ({
   const blob = new Blob([s2]);
 
   // 切割出文件名
-  const fileNameEncode = s1.headers.get('content-disposition')?.split('filename=')[1];
+  const fileNameEncode = s1.headers.get('content-disposition')?.split(splitFileNameField)[1];
   // 解码
   const fileName = fileNameEncode ? decodeURIComponent(fileNameEncode) : '';
 
