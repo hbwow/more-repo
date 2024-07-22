@@ -30,10 +30,12 @@ const LeftRightBtns = ({
       });
 
       return btnProps?.$$typeof ? (
-        <div className={_className}>{btnProps as React.ReactNode}</div>
+        <div key={`left-right-btn-${index}`} className={_className}>
+          {btnProps as React.ReactNode}
+        </div>
       ) : (
         <Button
-          key={index}
+          key={`left-right-btn-${index}`}
           type={_type === 'tooltip' ? 'text' : type}
           className={_className}
           {...rest}
