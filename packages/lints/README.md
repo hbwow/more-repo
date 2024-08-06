@@ -5,7 +5,7 @@
 ```BASH
 npm i @hbwow/lints -D
 #or
-yarn i @hbwow/lints -D
+yarn add @hbwow/lints -D
 #or
 pnpm add @hbwow/lints -D
 ```
@@ -13,11 +13,11 @@ pnpm add @hbwow/lints -D
 ### 安装 eslint stylelint prettier
 
 ```BASH
-npm i eslint stylelint prettier -D
+npm i eslint@8.x stylelint@15.x prettier@3.x -D
 #or
-yarn i eslint stylelint prettier -D
+yarn add eslint@8.x stylelint@15.x prettier@3.x -D
 #or
-pnpm add eslint stylelint prettier -D
+pnpm add eslint@8.x stylelint@15.x prettier@3.x -D
 ```
 
 ## 配置
@@ -61,11 +61,11 @@ module.exports = {
 ## 与 Git 工作流结合
 
 ```BASH
-npm i lint-staged -D
+npm i lint-staged@14.x -D
 #or
-yarn add lint-staged -D
+yarn add lint-staged@14.x -D
 #or
-pnpm add lint-staged -D
+pnpm add lint-staged@14.x -D
 ```
 
 package.json
@@ -114,11 +114,11 @@ npx husky add .husky/commit-msg 'npm run commitlint'
 安装
 
 ```BASH
-npm i @commitlint/cli @commitlint/config-conventional -D
+npm i @commitlint/cli@17.x @commitlint/config-conventional@17.x -D
 #or
-yarn add @commitlint/cli @commitlint/config-conventional -D
+yarn add @commitlint/cli@17.x @commitlint/config-conventional@17.x -D
 #or
-pnpm add @commitlint/cli @commitlint/config-conventional -D
+pnpm add @commitlint/cli@17.x @commitlint/config-conventional@17.x -D
 ```
 
 .commitlintrc.js
