@@ -1,5 +1,17 @@
 # @hbwow/utils
 
+## 1.1.4
+
+### Patch Changes
+
+- HandleInterceptorCode逻辑优化
+
+## 1.1.3
+
+### Patch Changes
+
+- HandleInterceptorCode逻辑优化
+
 ## 1.1.1
 
 ### Patch Changes
