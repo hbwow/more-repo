@@ -85,5 +85,6 @@ headers: {
 | code            | 状态码                      | number              | -        |      |
 | message         | 提示信息                    | string              | 未知错误 |      |
 | headers         | 请求头                      | Record<string, any> | {}       |      |
+| modalPropsForTokenExpired    | token失效弹窗 modal props                      | ModalFuncProps | {}       | |
 | modalProps      | 提示框使用的是 antd Modal） | ModalProps          | {}       |      |
 | onErrorCallback | 错误回调                    | () => void          | -        |      |
