@@ -50,7 +50,8 @@ headers: {
 
 | 参数       | 说明                        | 类型                | 默认值   | 版本  |
 | ---------- | --------------------------- | ------------------- | -------- | ----- |
-| code       | 状态码                      | number              | -        | 0.0.1 |
-| message    | 提示信息                    | string              | 未知错误 | 0.0.1 |
-| headers    | 请求头                      | Record<string, any> | {}       | 0.0.1 |
-| modalProps | 提示框使用的是 antd Modal） | ModalProps          | {}       | 0.0.1 |
+| code       | 状态码                      | number              | -        | |
+| message    | 提示信息                    | string              | 未知错误 | |
+| headers    | 请求头                      | Record<string, any> | {}       | |
+| modalPropsForTokenExpired    | token失效弹窗 modal props                      | ModalFuncProps | {}       | |
+| modalProps | 提示框使用的是 antd Modal） | ModalProps          | {}       | |
