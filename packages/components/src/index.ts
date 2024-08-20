@@ -4,5 +4,8 @@ export type { IFullBgImageProps } from './fullBgImage';
 export { default as RouteAuthorization } from './routeAuthorization';
 export type { IRouteAuthorizationProps } from './routeAuthorization';
 
-export { default as GlobalWarn } from './routeAuthorization';
-export type { IGlobalWarnProps } from './routeAuthorization';
+export { default as GlobalWarn } from './globalWarn';
+export type { IGlobalWarnProps } from './globalWarn';
+
+export { default as AuthButton } from './authButton';
+export type { IAuthButtonProps } from './authButton';

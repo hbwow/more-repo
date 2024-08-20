@@ -1,5 +1,17 @@
 # @hbwow/components
 
+## 1.2.1
+
+### Patch Changes
+
+- 导出 bug
+
+## 1.2.0
+
+### Minor Changes
+
+- 新增 AuthButton
+
 ## 1.1.1
 
 ### Patch Changes
