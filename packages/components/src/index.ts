@@ -34,3 +34,6 @@ export type { IRequiredIconProps } from './requiredIcon';
 
 export { default as PartiallyTruncate } from './partiallyTruncate';
 export type { IPartiallyTruncateProps } from './partiallyTruncate';
+
+export { default as AuthButton } from './authButton';
+export type { IAuthButtonProps } from './authButton';
