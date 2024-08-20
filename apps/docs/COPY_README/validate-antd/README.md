@@ -51,6 +51,14 @@ const { getRules } = useGetRules();
 >
   <Input placeholder='请输入'></Input>
 </Form.Item>;
+
+<Form.Item
+  label='手机号'
+  name='phone'
+  rules={[...getRules({ name: 'isEmpty', errorMsg: '手机号不能为空' })]}
+>
+  <Input placeholder='请输入'></Input>
+</Form.Item>;
 ```
 
 方式二（自定义校验规则）
@@ -104,8 +112,9 @@ const { getRules } = useGetRules();
 
 ### getRules
 
-| 参数     | 说明           | 类型    | 默认值 | 版本  |
-| -------- | -------------- | ------- | ------ | ----- |
-| name     | 规则名         | string  | -      | 0.0.1 |
-| required | 是否为必选字段 | boolean | true   | 0.0.1 |
-| optional | 是否选填       | boolean | false  | 0.0.1 |
+| 参数     | 说明                 | 类型    | 默认值 | 版本  |
+| -------- | -------------------- | ------- | ------ | ----- |
+| name     | 规则名               | string  | -      | 0.0.1 |
+| required | 是否为必选字段       | boolean | true   | 0.0.1 |
+| optional | 是否选填             | boolean | false  | 0.0.1 |
+| errorMsg | 用来替换默认报错信息 | string  | ''     | 1.1.0 |
