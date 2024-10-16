@@ -1,5 +1,23 @@
 # @hbwow/utils
 
+## 2.5.3
+
+### Patch Changes
+
+- 删除 console
+
+## 2.5.2
+
+### Patch Changes
+
+- HandleInterceptorCodeCom逻辑优化
+
+## 2.5.1
+
+### Patch Changes
+
+- 更新EventEmitter
+
 ## 2.5.0
 
 ### Minor Changes

@@ -1,48 +1,35 @@
 class EventEmitter {
-  private _events: any;
-  eventName!: string;
+  private events: { [key: string]: Function[] };
   constructor() {
-    this._events = {};
+    this.events = {};
   }
 
-  on(eventName: string, callback: (args?: any) => void) {
-    if (this._events[eventName]) {
-      if (this.eventName !== 'newListener') {
-        this.emit('newListener', eventName);
-      }
-      return;
+  // 注册监听器
+  on(eventName: string, listener: Function) {
+    if (!this.events[eventName]) {
+      this.events[eventName] = [];
     }
-    const callbacks = this._events[eventName] || [];
-    callbacks.push(callback);
-    this._events[eventName] = callbacks;
+
+    this.events[eventName].push(listener);
   }
 
-  emit(eventName: string, ...args: [any]) {
-    const callbacks = this._events[eventName] || [];
-    callbacks.forEach((cb: (arg0: any) => any) => cb(...args));
+  // 触发事件
+  emit(eventName: string, ...args: any[]) {
+    if (this.events[eventName]) {
+      this.events[eventName].forEach((listener) => listener(...args));
+    }
   }
 
-  once(eventName: string, callback: (res: any) => void) {
-    const one = (...args: [string]) => {
-      callback(...args);
-      this.off(eventName, one as any);
-    };
-    one.initialCallback = callback;
-    this.on(eventName, one);
-  }
-  /* 用于取消订阅 */
-  off(eventName: string, callback?: () => void) {
-    delete this._events[eventName];
-    console.log(callback);
-    // const callbacks = this._events[eventName] || [];
-    // const newCallbacks = callbacks.filter(
-    //   (fn: { (): void; initialCallback?: any }) =>
-    //     fn != callback && fn.initialCallback != callback,
-    // );
+  // 移除监听器
+  off(eventName: string, listenerToRemove: Function) {
+    if (!this.events[eventName]) return;
 
-    // this._events[eventName] = newCallbacks;
-    // console.log('取消', this._events, eventName, newCallbacks);
+    this.events[eventName] = this.events[eventName].filter(
+      (listener) => listener !== listenerToRemove,
+    );
   }
 }
 
-export const events = new EventEmitter();
+// 使用示例
+
+export const emitter = new EventEmitter();

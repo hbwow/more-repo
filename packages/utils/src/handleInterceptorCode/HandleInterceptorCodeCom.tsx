@@ -2,7 +2,7 @@
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2024-01-24 15:35:03
  * @LastEditors: 冷开俊 lengkj@travelsky.com.cn
- * @LastEditTime: 2024-10-16 10:09:39
+ * @LastEditTime: 2024-10-16 11:09:55
  * @FilePath: /more-repo/packages/utils/src/handleInterceptorCode/handleInterceptorCodeCom.tsx
  * @Description: 因为直接静态方法使用Modal会导致拿不到context上下文，所以写个组件搭配使用
  */
@@ -10,7 +10,7 @@ import React, { useEffect, useState } from 'react';
 
 import { Modal, ModalFuncProps } from 'antd';
 
-import { events } from '../utils/eventEmit';
+import { emitter } from '../utils/eventEmit';
 import { EVENTS_NAME } from './handleInterceptorCode';
 
 interface IModalProps extends ModalFuncProps {
@@ -27,7 +27,7 @@ const HandleInterceptorCodeCom = ({ customRender }: IHandleInterceptorCodeComPro
   const [modalProps, setModalProps] = useState<IModalProps>();
 
   useEffect(() => {
-    events.on(EVENTS_NAME, (_modalProps: IModalProps) => {
+    const listener = (_modalProps: IModalProps) => {
       if (customRender) {
         setModalProps(_modalProps);
       }
@@ -46,7 +46,13 @@ const HandleInterceptorCodeCom = ({ customRender }: IHandleInterceptorCodeComPro
       }
 
       modal[modalMethod]({ ...nextProps });
-    });
+    };
+
+    emitter.on(EVENTS_NAME, listener);
+
+    return () => {
+      emitter.off(EVENTS_NAME, listener);
+    };
   }, [modal, customRender]);
 
   return <>{customRender ? customRender({ ...modalProps }) : contextHolder}</>;
