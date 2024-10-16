@@ -10,6 +10,7 @@ import {
   ModalBtn,
   RequiredIcon,
   PartiallyTruncate,
+  CustomSuspense,
 } from '@hbwow/components';
 // import { useDownload, handleDownload } from '@hbwow/hooks';
 
@@ -26,9 +27,21 @@ const handleInterceptorCode = new HandleInterceptorCode({
   tokenExpiredCodes: [401],
 });
 
+const fetchData = (delay: number) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve([1, 2, 3, 4, 5, 6]);
+    }, delay);
+  });
+};
+
 function App() {
   const [blob, setBlob] = useState<Blob>();
   const refPdfViewer = useRef<HTMLIFrameElement>(null);
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [isFetching, setIsFetching] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const handleErrorCode = (code = 401) => {
     handleInterceptorCode.handleCode({ code });
@@ -47,6 +60,12 @@ function App() {
     pdfToBlob(demoPdf);
   }, []);
 
+  useEffect(() => {
+    setIsLoading(true);
+    fetchData(2000).then(() => {
+      setIsLoading(false);
+    });
+  }, []);
   return (
     <>
       <div style={{ position: 'relative', width: '600px', height: '400px' }}>
@@ -141,6 +160,30 @@ function App() {
           </PartiallyTruncate.T>
           <PartiallyTruncate.Div>--《我的阿勒泰》</PartiallyTruncate.Div>
         </PartiallyTruncate>
+
+        {/* -------------- */}
+        <Divider />
+        <CustomSuspense
+          isLoading={isLoading}
+          isFetching={isFetching}
+          isError={isError}
+          error={{
+            onReset: () => {
+              setIsError(false);
+            },
+          }}
+        >
+          <div style={{ width: '60vw', height: '20vh', backgroundColor: 'red' }}>
+            加载成功！！！
+          </div>
+          <Button
+            onClick={() => {
+              setIsFetching(true);
+            }}
+          >
+            触发加载
+          </Button>
+        </CustomSuspense>
       </div>
     </>
   );
