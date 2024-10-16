@@ -1,5 +1,11 @@
 # @hbwow/utils
 
+## 2.5.0
+
+### Minor Changes
+
+- HandleInterceptorCodeCom组件添加自定义渲染组件
+
 ## 2.4.0
 
 ### Minor Changes
