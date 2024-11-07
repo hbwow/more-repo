@@ -9,3 +9,15 @@ export type { IGlobalWarnProps } from './globalWarn';
 
 export { default as AuthButton } from './authButton';
 export type { IAuthButtonProps } from './authButton';
+
+export { default as CustomSuspense } from './customSuspense';
+export type { ICustomSuspenseProps } from './customSuspense';
+
+export { default as LeftRightBtns } from './leftRightBtns';
+export type { ILeftRightBtnsProps } from './leftRightBtns';
+
+export { default as ModalBtn } from './modalBtn';
+export type { IModalBtnProps } from './modalBtn';
+
+export { default as Tips } from './tips';
+export type { ITipsProps } from './tips';

@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 1.3.0
+
+### Minor Changes
+
+- 新增 CustomSuspense LeftRightBtns ModalBtn Tips
+
 ## 1.2.1
 
 ### Patch Changes
