@@ -3,7 +3,7 @@ const handleDownload = async ({
   reqUrl,
   token = '',
   name = '',
-  splitFileNameField = 'filename=',
+  splitFileNameField = '=',
   method = 'GET',
   headers = {},
   data,
