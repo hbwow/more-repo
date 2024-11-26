@@ -32,25 +32,25 @@ const CustomSuspense = (props: ICustomSuspenseProps) => {
     children,
   } = props;
 
+  const cloneChildren = React.Children.map(children, (child) => {
+    return React.cloneElement(child, {});
+  });
+
   const { showBoundary } = useErrorBoundary();
 
   if (isLoading) {
     return <Skeleton active {...loadingComProps} />;
   }
 
-  // if (isFetching) {
-  //   return <Spin {...fetchingComProps}>{children}</Spin>;
-  // }
-
-  if (isError) {
-    showBoundary({ message: error.message ? error.message : '接口请求错误！' });
+  if (isFetching) {
+    return <Spin {...fetchingComProps}>{cloneChildren}</Spin>;
   }
 
-  return (
-    <Spin spinning={isFetching} {...fetchingComProps}>
-      {children}
-    </Spin>
-  );
+  if (isError) {
+    showBoundary({ message: error.message ? error.message : '错误！' });
+  }
+
+  return <>{cloneChildren}</>;
 };
 
 const Index = (props: ICustomSuspenseProps) => {

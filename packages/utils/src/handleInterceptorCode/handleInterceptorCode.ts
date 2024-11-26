@@ -1,14 +1,14 @@
 /*
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-08-30 17:40:09
- * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2024-01-26 14:49:43
+ * @LastEditors: 冷开俊 lengkj@travelsky.com.cn
+ * @LastEditTime: 2024-10-16 10:59:57
  * @FilePath: /more-repo/packages/utils/src/handleInterceptorCode/handleInterceptorCode.ts
  * @Description: 处理返回拦截code逻辑
  */
 
 import { ModalFuncProps } from 'antd/lib/modal';
-import { events } from '../utils/eventEmit';
+import { emitter } from '../utils/eventEmit';
 
 export const EVENTS_NAME = '@hbwow/utils/handleInterceptorCode';
 
@@ -58,7 +58,7 @@ class HandleInterceptorCode {
     const _message = message || '未知错误';
 
     if (this.tokenExpiredCodes.includes(code)) {
-      events.emit(EVENTS_NAME, {
+      emitter.emit(EVENTS_NAME, {
         modalMethod: 'error',
         modalDestroyAll: true,
         ...this.commonModalConfig,
@@ -90,7 +90,7 @@ class HandleInterceptorCode {
     }
 
     if (!this.ignoreCodes.includes(code)) {
-      events.emit(EVENTS_NAME, {
+      emitter.emit(EVENTS_NAME, {
         ...this.commonModalConfig,
         content: _message,
         ...modalProps,
