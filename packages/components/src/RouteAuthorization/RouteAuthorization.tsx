@@ -16,7 +16,7 @@ const defaultRoute = {};
 const defaultPathField = 'path';
 const defaultChildrenField = 'children';
 
-// 递归
+// 递归（这里递归了，参数要传递）
 const _getRouteAuth = ({
   pathname,
   route = defaultRoute,
@@ -33,7 +33,7 @@ const _getRouteAuth = ({
       }
 
       if (r[childrenField]) {
-        return _getRouteAuth({ pathname, route: r[childrenField] });
+        return _getRouteAuth({ pathname, route: r[childrenField], pathField, childrenField });
       }
 
       return false;
@@ -46,7 +46,7 @@ const _getRouteAuth = ({
     }
 
     if (route?.[childrenField]) {
-      return _getRouteAuth({ pathname, route: route[childrenField] });
+      return _getRouteAuth({ pathname, route: route[childrenField], pathField, childrenField });
     }
 
     return false;
