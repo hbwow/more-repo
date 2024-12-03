@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 2.18.1
+
+### Patch Changes
+
+- 递归，参数要传递
+
 ## 2.18.0
 
 ### Minor Changes
