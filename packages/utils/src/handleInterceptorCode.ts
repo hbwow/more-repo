@@ -1,8 +1,8 @@
 /*
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-08-30 17:40:09
- * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2024-08-16 17:12:20
+ * @LastEditors: 冷开俊 lengkj@travelsky.com.cn
+ * @LastEditTime: 2024-12-16 09:31:01
  * @FilePath: /more-repo/packages/utils/src/handleInterceptorCode.ts
  * @Description: 处理返回拦截code逻辑
  */
@@ -70,7 +70,6 @@ class HandleInterceptorCode {
       });
 
       onErrorCallback?.();
-
       return false;
     }
 
@@ -82,7 +81,6 @@ class HandleInterceptorCode {
       });
 
       onErrorCallback?.();
-
       return false;
     }
 

@@ -2,10 +2,9 @@
 
 ## 发包步骤
 
-1. `pnpm build`
-2. `pnpm changeset` （生成临时的 changelog）
-3. `pnpm version-packages` （消耗changelog生成组件的更新记录，并更新组件version）
-4. `pnpm release:only` （发布）
+1. `pnpm changeset` （生成临时的 changelog）
+2. `pnpm version-packages` （消耗changelog生成组件的更新记录，并更新组件version）
+3. `pnpm release`
 
 ## 包管理（PNPM）
 

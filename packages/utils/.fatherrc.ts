@@ -13,5 +13,6 @@ export default defineConfig({
     output: 'dist',
   },
   platform: 'browser',
-  extraBabelPlugins: [['import', { libraryName: 'antd', style: 'css' }]],
+  // antd 5.x 不需要这个
+  // extraBabelPlugins: [['import', { libraryName: 'antd', style: 'css' }]],
 });

@@ -21,3 +21,6 @@ export type { IModalBtnProps } from './modalBtn';
 
 export { default as Tips } from './tips';
 export type { ITipsProps } from './tips';
+export { default as CustomSelect } from './customSelect';
+export type { ICustomSelectProps } from './customSelect';
+
