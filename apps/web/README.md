@@ -1,5 +1,7 @@
 ## Getting Started
 
+"build": "next build",
+
 First, run the development server:
 
 ```bash

@@ -1,5 +1,11 @@
 # @hbwow/components
 
+## 1.3.2
+
+### Patch Changes
+
+- 重新发版
+
 ## 1.3.1
 
 ### Patch Changes
