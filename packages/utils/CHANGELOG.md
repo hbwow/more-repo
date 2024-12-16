@@ -1,5 +1,29 @@
 # @hbwow/utils
 
+## 1.1.4
+
+### Patch Changes
+
+- HandleInterceptorCode逻辑优化
+
+## 1.1.3
+
+### Patch Changes
+
+- HandleInterceptorCode逻辑优化
+
+## 1.1.1
+
+### Patch Changes
+
+- build
+
+## 1.1.0
+
+### Minor Changes
+
+- 增加 onErrorCallback
+
 ## 1.0.0
 
 ### Major Changes

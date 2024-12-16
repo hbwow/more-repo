@@ -30,6 +30,18 @@
 
 - 组件导出
 
+## 2.1.1
+
+### Patch Changes
+
+- 组件导出
+
+## 2.1.0
+
+### Minor Changes
+
+- 新增components-GlobalWarn
+
 ## 1.1.0
 
 ### Minor Changes

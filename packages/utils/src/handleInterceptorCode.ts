@@ -2,18 +2,21 @@
  * @Author: hbwow lllengkaixin@gmail.com
  * @Date: 2023-08-30 17:40:09
  * @LastEditors: hbwow lllengkaixin@gmail.com
- * @LastEditTime: 2023-09-07 14:18:03
+ * @LastEditTime: 2024-08-16 17:12:20
  * @FilePath: /more-repo/packages/utils/src/handleInterceptorCode.ts
  * @Description: 处理返回拦截code逻辑
  */
 
 import { Modal, ModalProps } from 'antd';
+import { ModalFuncProps } from 'antd/lib/modal';
 
 export interface IHandleCodeParams {
   code: number;
   message?: string;
   headers?: Record<string, any>;
   modalProps?: ModalProps;
+  modalPropsForTokenExpired?: ModalFuncProps;
+  onErrorCallback?: () => {};
 }
 
 class HandleInterceptorCode {
@@ -38,9 +41,16 @@ class HandleInterceptorCode {
     this.ignoreCodes = ignoreCodes;
   }
 
-  handleCode({ code, message, headers = {}, modalProps = {} }: IHandleCodeParams): void {
+  handleCode({
+    code,
+    message,
+    headers = {},
+    modalProps = {},
+    modalPropsForTokenExpired,
+    onErrorCallback,
+  }: IHandleCodeParams): boolean {
     if (headers['No-Notify-Message'] === 'Y') {
-      return;
+      return true;
     }
 
     const _message = message || '未知错误';
@@ -56,9 +66,12 @@ class HandleInterceptorCode {
             window.location.href = '/login';
           }
         },
-        ...modalProps,
+        ...modalPropsForTokenExpired,
       });
-      return;
+
+      onErrorCallback?.();
+
+      return false;
     }
 
     if (!this.ignoreCodes.includes(code)) {
@@ -68,8 +81,12 @@ class HandleInterceptorCode {
         ...modalProps,
       });
 
-      return;
+      onErrorCallback?.();
+
+      return false;
     }
+
+    return true;
   }
 }
 
