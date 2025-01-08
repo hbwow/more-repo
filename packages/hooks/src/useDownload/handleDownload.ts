@@ -26,6 +26,15 @@ const handleDownload = async ({
     },
     ...(data ? { body: JSON.stringify(data) } : {}),
   });
+  const contentType = s1.headers.get('Content-Type');
+
+  // 错误处理(非200状态码，或者返回json)
+  if (!s1.ok || (contentType && contentType.includes('application/json'))) {
+    console.log('🚀🚀🚀 ~ 非200状态码，或者返回json');
+
+    const _json = await s1.json();
+    throw _json;
+  }
 
   const s2 = await s1.blob();
 
