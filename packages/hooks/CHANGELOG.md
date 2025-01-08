@@ -1,5 +1,11 @@
 # @hbwow/hooks
 
+## 2.7.2
+
+### Patch Changes
+
+- handleDownload 错误处理(非200状态码，或者返回json)
+
 ## 2.7.1
 
 ### Patch Changes
