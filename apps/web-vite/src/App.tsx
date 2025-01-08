@@ -12,7 +12,7 @@ import {
   PartiallyTruncate,
   CustomSuspense,
 } from '@hbwow/components';
-// import { useDownload, handleDownload } from '@hbwow/hooks';
+import { useDownload } from '@hbwow/hooks';
 
 // import { md } from '@hbwow/utils';
 // const { formatTreeData } = md;
@@ -42,6 +42,13 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isFetching, setIsFetching] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  const {
+    mutate: mutateDownload,
+    isLoading: isLoadingDownload,
+    // isError: isErrorDownload,
+    // error,
+  } = useDownload();
 
   const handleErrorCode = (code = 401) => {
     handleInterceptorCode.handleCode({ code });
@@ -184,6 +191,22 @@ function App() {
             触发加载
           </Button>
         </CustomSuspense>
+
+        {/* -------------- */}
+        <Divider />
+
+        <Button
+          loading={isLoadingDownload}
+          onClick={() => {
+            mutateDownload({
+              reqUrl: '/api',
+              method: 'POST',
+              token: `Bearer cb40429e-89a8-4724-b780-8f3017d28460`,
+            });
+          }}
+        >
+          download
+        </Button>
       </div>
     </>
   );

@@ -13,8 +13,8 @@ export default defineConfig({
   server: {
     port: 3124,
     proxy: {
-      '/afas': {
-        target: 'http://192.168.31.81:8086/',
+      '/api': {
+        target: 'http://example.com',
         changeOrigin: true,
         // rewrite: (path) => path.replace(/^\/githubApi/, ''),
         // configure: (proxy, options) => {
